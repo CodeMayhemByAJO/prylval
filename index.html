@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prylval – Bästa prylarna: jämförelser, tester & topplistor</title>
+    <meta name="description" content="Prylval hjälper dig hitta rätt pryl med tydliga jämförelser, tester och topplistor. Sakligt, enkelt och uppdaterat.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Prylval – Bästa prylarna: jämförelser, tester & topplistor">
+    <meta property="og:description" content="Prylval hjälper dig hitta rätt pryl med tydliga jämförelser, tester och topplistor. Sakligt, enkelt och uppdaterat.">
+    <meta property="og:url" content="https://www.prylval.se">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Prylval">
+    <meta property="og:type" content="website">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.prylval.se">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prylval",
+        "url": "https://www.prylval.se",
+        "description": "Prylval hjälper dig hitta rätt pryl med tydliga jämförelser, tester och topplistor",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prylval",
+            "url": "https://www.prylval.se"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Pryl-Nils",
+            "jobTitle": "Redaktör",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Prylval"
+            }
+        }
+    }
+    </script>
+    
+    <style>
+        /* Reset och basstilar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        /* Skip to content */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .tagline {
+            display: none;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.2rem;
+        }
+        
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover,
+        nav a:focus {
+            color: #2563eb;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: #fff;
+            color: #2563eb;
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background: #f1f5f9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: white;
+            color: #2563eb;
+        }
+        
+        /* Trust section */
+        .trust {
+            padding: 3rem 0;
+            background: #f8fafc;
+        }
+        
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .trust-item {
+            padding: 1.5rem;
+        }
+        
+        .trust-item .emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .trust-item h3 {
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        
+        /* Cards section */
+        .cards-section {
+            padding: 4rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card h3 {
+            margin-bottom: 1rem;
+            color: #1e293b;
+            font-size: 1.3rem;
+        }
+        
+        .card p {
+            margin-bottom: 1rem;
+            color: #64748b;
+        }
+        
+        .card-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-features li {
+            padding: 0.25rem 0;
+            color: #64748b;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .card-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+        
+        .card-btn {
+            background: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        
+        .card-btn:hover,
+        .card-btn:focus {
+            background: #1d4ed8;
+        }
+        
+        /* Methodology */
+        .methodology {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+        
+        .methodology-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .methodology h2 {
+            margin-bottom: 2rem;
+            color: #1e293b;
+        }
+        
+        .methodology p {
+            margin-bottom: 1rem;
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        /* About */
+        .about {
+            padding: 4rem 0;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about h2 {
+            margin-bottom: 2rem;
+            color: #1e293b;
+        }
+        
+        .about p {
+            margin-bottom: 1rem;
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        .persona-note {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: #92400e;
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 4rem 0;
+            background: #f8fafc;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            margin-bottom: 2rem;
+            color: #1e293b;
+        }
+        
+        .contact p {
+            margin-bottom: 1.5rem;
+            color: #64748b;
+        }
+        
+        .contact-links {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        
+        .contact-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-links a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .contact-links a:hover,
+        .contact-links a:focus {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover,
+        .footer-links a:focus {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trust-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .tagline {
+                display: block;
+            }
+        }
+        
+        /* Focus states */
+        a:focus,
+        button:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Hoppa till innehåll</a>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="#" class="logo">Prylval</a>
+                    <div class="tagline">Bästa prylarna – jämförelser, tester och topplistor</div>
+                </div>
+                <button class="nav-toggle" aria-label="Öppna meny">☰</button>
+                <nav>
+                    <ul>
+                        <li><a href="#hero">Hem</a></li>
+                        <li><a href="#tester">Tester</a></li>
+                        <li><a href="#topplistor">Topplistor</a></li>
+                        <li><a href="#om-prylval">Om Prylval</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>Hitta rätt pryl – varje gång</h1>
+                <p>Prylval hjälper dig navigera i den överväldigande mängden produkter på marknaden. Vi testar, jämför och rankar så du slipper göra det. Våra rekommendationer bygger på sakliga tester, tydliga jämförelser och löpande uppdateringar.</p>
+                <div class="hero-buttons">
+                    <a href="#tester" class="btn btn-primary">Läs senaste testet</a>
+                    <a href="#kontakt" class="btn btn-secondary">Kontakta oss</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <span class="emoji">🔬</span>
+                        <h3>Sakliga tester</h3>
+                        <p>Vi testar produkter objektivt och baserar våra rekommendationer på fakta, inte reklam.</p>
+                    </div>
+                    <div class="trust-item">
+                        <span class="emoji">📊</span>
+                        <h3>Tydliga rekommendationer</h3>
+                        <p>Få konkreta svar på vad som är bäst för just dina behov och budget.</p>
+                    </div>
+                    <div class="trust-item">
+                        <span class="emoji">🔄</span>
+                        <h3>Uppdateras löpande</h3>
+                        <p>Våra tester och listor hålls aktuella med de senaste produkterna och priserna.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tester" class="cards-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Senaste tester & topplistor</h2>
+                    <p>Upptäck våra senaste produktjämförelser och rekommendationer</p>
+                </div>
+                <div class="cards-grid">
+                    <article class="card">
+                        <img src="https://via.placeholder.com/400x200.png?text=Robotdammsugare" alt="Robotdammsugare som arbetar på golvet">
+                        <div class="card-content">
+                            <h3>Bästa robotdammsugaren 2025 – topp 7</h3>
+                            <p>Vi har testat årets bästa robotdammsugare för olika behov och budgetar. Från grundläggande städning till premium-smart hem.</p>
+                            <ul class="card-features">
+                                <li>Suction power upp till 4000 Pa</li>
+                                <li>Smart kartläggning och navigering</li>
+                                <li>Lång batteritid och tyst drift</li>
+                            </ul>
+                            <div class="card-footer">
+                                <span>Senast uppdaterad: januari 2025</span>
+                                <a href="#" class="card-btn">Läs guiden</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://via.placeholder.com/400x200.png?text=Träningsklocka" alt="Träningsklocka med fitness-tracking">
+                        <div class="card-content">
+                            <h3>Bästa träningsklockan 2025 – för iPhone & Android</h3>
+                            <p>Komplett guide till årets bästa träningsklockor. Vi jämför funktioner, kompatibilitet och pris för olika aktivitetsnivåer.</p>
+                            <ul class="card-features">
+                                <li>GPS och hjärtfrekvensmätning</li>
+                                <li>Lång batteritid och vattentät</li>
+                                <li>Smartphone-integration</li>
+                            </ul>
+                            <div class="card-footer">
+                                <span>Senast uppdaterad: januari 2025</span>
+                                <a href="#" class="card-btn">Läs guiden</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://via.placeholder.com/400x200.png?text=Hörlurar" alt="Brusreducerande hörlurar">
+                        <div class="card-content">
+                            <h3>Bästa brusreducerande hörlurar – pendling & kontor</h3>
+                            <p>Perfekta hörlurar för att blockera omgivningsljud. Vi testar ANC-teknik, komfort och ljudkvalitet för olika användningsområden.</p>
+                            <ul class="card-features">
+                                <li>Adaptiv brusreducering</li>
+                                <li>Lång batteritid och snabb laddning</li>
+                                <li>Komfortabel design för långvarig användning</li>
+                            </ul>
+                            <div class="card-footer">
+                                <span>Senast uppdaterad: januari 2025</span>
+                                <a href="#" class="card-btn">Läs guiden</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://via.placeholder.com/400x200.png?text=Mesh+WiFi" alt="Mesh WiFi-system för hem">
+                        <div class="card-content">
+                            <h3>Bästa mesh-WiFi för villa</h3>
+                            <p>Lösningar för att få snabb och stabil internetuppkoppling i hela huset. Vi jämför täckning, hastighet och enkelhet.</p>
+                            <ul class="card-features">
+                                <li>Fullständig täckning i hela huset</li>
+                                <li>Enkel installation och hantering</li>
+                                <li>Snabb och stabil anslutning</li>
+                            </ul>
+                            <div class="card-footer">
+                                <span>Senast uppdaterad: januari 2025</span>
+                                <a href="#" class="card-btn">Läs guiden</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://via.placeholder.com/400x200.png?text=Airfryer" alt="Airfryer för fritering utan olja">
+                        <div class="card-content">
+                            <h3>Bästa airfryer 2025</h3>
+                            <p>Gör krispiga rätter med minimalt med olja. Vi testar kapacitet, funktioner och resultat för olika maträtter.</p>
+                            <ul class="card-features">
+                                <li>Stor kapacitet för familjer</li>
+                                <li>Flera koksätt och temperaturer</li>
+                                <li>Enkel rengöring och underhåll</li>
+                            </ul>
+                            <div class="card-footer">
+                                <span>Senast uppdaterad: januari 2025</span>
+                                <a href="#" class="card-btn">Läs guiden</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://via.placeholder.com/400x200.png?text=Webbkamera" alt="Webbkamera för möten och streaming">
+                        <div class="card-content">
+                            <h3>Bästa webbkamera för möten & streaming</h3>
+                            <p>Professionell bildkvalitet för distansarbete och streaming. Vi jämför upplösning, ljudkvalitet och kompatibilitet.</p>
+                            <ul class="card-features">
+                                <li>4K upplösning och autofokus</li>
+                                <li>Inbyggd mikrofon med brusreducering</li>
+                                <li>Universal kompatibilitet</li>
+                            </ul>
+                            <div class="card-footer">
+                                <span>Senast uppdaterad: januari 2025</span>
+                                <a href="#" class="card-btn">Läs guiden</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="topplistor" class="methodology">
+            <div class="container">
+                <div class="methodology-content">
+                    <h2>Så testar vi produkter</h2>
+                    <p>Våra tester bygger på omfattande research och objektiva kriterier. Vi jämför specifikationer, funktioner, prisbild och användaromdömen från flera källor.</p>
+                    <p>Vi är transparenta med våra metoder och källor. Om du köper via våra länkar kan vi få en liten provision, men detta påverkar aldrig våra rekommendationer. Vi rekommenderar bara produkter vi verkligen tror på.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="om-prylval" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <h2>Om Prylval</h2>
+                    <p>Prylval grundades av en enkel insikt: det är svårt att hitta rätt produkt i dagens överflöd av val. Vi tror att bra köpbeslut bygger på tydlig information, inte reklam.</p>
+                    <p>Vår redaktionella röst, Pryl-Nils, är en teknikexpert som gör komplexa produktspecifikationer begripliga för vanliga konsumenter. Han testar, jämför och förklarar så att du kan fokusera på det som verkligen betyder något.</p>
+                    <div class="persona-note">
+                        <strong>Viktigt:</strong> Pryl-Nils är en redaktionell persona – inte en verklig person – som används för att göra texter mer lättläsa och engagerande.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2>Kontakt & Samarbete</h2>
+                    <p>Har du frågor, förslag eller vill samarbeta? Vi finns här för att hjälpa dig hitta rätt pryl.</p>
+                    <p><a href="mailto:hej@prylval.se">hej@prylval.se</a></p>
+                    <ul class="contact-links">
+                        <li><a href="mailto:press@prylval.se">Press & samarbeten</a></li>
+                        <li><a href="mailto:tips@prylval.se">Tipsa om produkt</a></li>
+                        <li><a href="mailto:fel@prylval.se">Rapportera fel i artikeln</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">Integritetspolicy</a>
+                    <a href="#">Användarvillkor</a>
+                    <a href="#">Cookies</a>
+                </div>
+                <p>&copy; 2025 Prylval. Alla rättigheter förbehållna.</p>
+                <p>Priser kan komma att ändras. Vi ansvarar inte för eventuella fel i produktinformation.</p>
+                <p>Senast uppdaterad: januari 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobilmeny toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('nav ul');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Stäng menyn när man klickar på en länk
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Uppdatera året i footer automatiskt
+        const currentYear = new Date().getFullYear();
+        document.querySelector('footer .footer-content p:first-of-type').innerHTML = 
+            `&copy; ${currentYear} Prylval. Alla rättigheter förbehållna.`;
+    </script>
+</body>
+</html>
