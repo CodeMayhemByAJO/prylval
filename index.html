@@ -945,7 +945,7 @@
             background: rgba(0, 0, 0, 0.6) !important;
             backdrop-filter: blur(8px) !important;
             z-index: 9999 !important;
-            display: flex !important;
+            display: none;
             align-items: center !important;
             justify-content: center !important;
             padding: 2rem !important;
@@ -956,8 +956,7 @@
         }
         
         /* Dold popup */
-        .cookie-banner[style*="display: none"],
-        .cookie-banner[style*="visibility: hidden"] {
+        .cookie-banner[style*="display: none"] {
             opacity: 0 !important;
             visibility: hidden !important;
             pointer-events: none !important;
@@ -1032,16 +1031,6 @@
         .cookie-buttons .btn:hover {
             transform: translateY(-2px) !important;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
-        }
-        
-        /* Säkerställ att alla knappar syns */
-        #accept-necessary-cookies,
-        #reject-cookies {
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            position: relative !important;
-            z-index: 1 !important;
         }
         
         /* Professionell färgsättning */
@@ -1171,6 +1160,29 @@
             }
         }
         
+        /* Back to top buttons */
+        .back-to-top {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .back-to-top .back-btn {
+            background: #64748b;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top .back-btn:hover,
+        .back-to-top .back-btn:focus {
+            background: #475569;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(71, 85, 105, 0.2);
+        }
+        
         /* Smooth scroll */
         html {
             scroll-behavior: smooth;
@@ -1184,7 +1196,7 @@
     <a href="#main-content" class="skip-link">Hoppa till innehåll</a>
     
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="cookie-banner">
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
         <div class="container">
             <div class="cookie-content">
                 <div class="cookie-text">
@@ -1192,9 +1204,9 @@
                     <p>Vi använder cookies för att förbättra din upplevelse på Prylval.se. Genom att fortsätta använda webbplatsen godkänner du vår användning av cookies.</p>
                 </div>
                 <div class="cookie-buttons">
-                    <button id="accept-all-cookies" class="btn btn-primary" style="display: block !important; visibility: visible !important;">Acceptera alla cookies</button>
-                    <button id="accept-necessary-cookies" class="btn btn-secondary" style="display: block !important; visibility: visible !important;">Endast nödvändiga</button>
-                    <button id="reject-cookies" class="btn btn-secondary" style="display: block !important; visibility: visible !important;">Avvisa</button>
+                    <button id="accept-all-cookies" class="btn btn-primary">Acceptera alla cookies</button>
+                    <button id="accept-necessary-cookies" class="btn btn-secondary">Endast nödvändiga</button>
+                    <button id="reject-cookies" class="btn btn-secondary">Avvisa</button>
                 </div>
             </div>
         </div>
@@ -1285,10 +1297,8 @@
                                 <li>3 toppmodeller jämförda</li>
                                 <li>Pris, funktioner och prestanda</li>
                                 <li>Vinnare och rekommendationer</li>
-                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Robotdammsugare</span>
                                 <a href="robotdammsugare.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
@@ -1306,10 +1316,8 @@
                                 <li>3 premium-modeller jämförda</li>
                                 <li>Fitness-funktioner och batteritid</li>
                                 <li>iPhone vs Android-kompatibilitet</li>
-                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Träningsklockor</span>
                                 <a href="traningsklockor.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
@@ -1327,10 +1335,8 @@
                                 <li>3 världsledande modeller</li>
                                 <li>ANC-kvalitet och ljud</li>
                                 <li>Batteritid och komfort</li>
-                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Hörlurar</span>
                                 <a href="horlurar-anc.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
@@ -1348,10 +1354,8 @@
                                 <li>3 WiFi 6-system jämförda</li>
                                 <li>Prestanda och täckning</li>
                                 <li>Installation och funktioner</li>
-                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Mesh WiFi</span>
                                 <a href="mesh-wifi.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
@@ -1369,10 +1373,8 @@
                                 <li>3 populära modeller jämförda</li>
                                 <li>Kapacitet och koksätt</li>
                                 <li>Pris och kvalitet</li>
-                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Airfryers</span>
                                 <a href="airfryers.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
@@ -1390,14 +1392,15 @@
                                 <li>3 energisnåla modeller</li>
                                 <li>Kapacitet och funktioner</li>
                                 <li>Pris och energiklass</li>
-                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Torktumlare</span>
                                 <a href="torktumlare.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
                     </article>
+                </div>
+                <div class="back-to-top">
+                    <a href="#top" class="btn btn-secondary back-btn">← Tillbaka till toppen</a>
                 </div>
             </div>
         </section>
@@ -1507,6 +1510,9 @@
                         </div>
                     </article>
                 </div>
+                <div class="back-to-top">
+                    <a href="#top" class="btn btn-secondary back-btn">← Tillbaka till toppen</a>
+                </div>
             </div>
         </section>
 
@@ -1515,11 +1521,6 @@
                 <div class="section-header">
                     <h2>Alla produktkategorier</h2>
                     <p>Utforska våra tester och jämförelser inom varje produktområde</p>
-                    <div class="navigation-actions">
-                        <a href="#top" class="btn btn-secondary back-btn">
-                            ← Tillbaka till toppen
-                        </a>
-                    </div>
                 </div>
                 <div class="categories-grid" id="kategorier-grid">
                     <a href="robotdammsugare.html" class="category-item">
@@ -1626,6 +1627,9 @@
                         </div>
                     </a>
                 </div>
+                <div class="back-to-top">
+                    <a href="#top" class="btn btn-secondary back-btn">← Tillbaka till toppen</a>
+                </div>
             </div>
         </section>
 
@@ -1659,6 +1663,9 @@
             </div>
 
         </div>
+        <div class="back-to-top">
+            <a href="#top" class="btn btn-secondary back-btn">← Tillbaka till toppen</a>
+        </div>
     </div>
 </section>
 
@@ -1690,7 +1697,7 @@
                 </div>
                 <p>&copy; 2025 Prylval. Alla rättigheter förbehållna.</p>
                 <p>Priser kan komma att ändras. Vi ansvarar inte för eventuella fel i produktinformation.</p>
-                <p>Senast uppdaterad: januari 2025</p>
+                <p>Senast uppdaterad: augusti 2025</p>
             </div>
         </div>
     </footer>
@@ -1928,10 +1935,19 @@ updateTopplistan();
                 // Event listeners
                 this.setupEventListeners();
                 
-                // Visa cookie banner om inget samtycke finns
-                if (!this.cookieConsent) {
+                // Visa cookie banner endast om inget samtycke finns OCH det är första besöket
+                if (!this.cookieConsent && !this.hasShownBanner()) {
                     this.showCookieBanner();
+                    this.markBannerAsShown();
                 }
+            }
+            
+            hasShownBanner() {
+                return localStorage.getItem('prylval-cookie-banner-shown') === 'true';
+            }
+            
+            markBannerAsShown() {
+                localStorage.setItem('prylval-cookie-banner-shown', 'true');
             }
             
             setupEventListeners() {
@@ -1940,37 +1956,22 @@ updateTopplistan();
                 const acceptNecessaryBtn = document.getElementById('accept-necessary-cookies');
                 const rejectBtn = document.getElementById('reject-cookies');
                 
-                console.log('Hittade knappar:', {
-                    acceptAll: acceptAllBtn,
-                    acceptNecessary: acceptNecessaryBtn,
-                    reject: rejectBtn
-                });
-                
                 if (acceptAllBtn) {
                     acceptAllBtn.addEventListener('click', () => {
-                        console.log('Acceptera alla cookies klickad');
                         this.acceptAllCookies();
                     });
-                } else {
-                    console.error('accept-all-cookies knapp hittades inte');
                 }
                 
                 if (acceptNecessaryBtn) {
                     acceptNecessaryBtn.addEventListener('click', () => {
-                        console.log('Endast nödvändiga cookies klickad');
                         this.acceptNecessaryCookies();
                     });
-                } else {
-                    console.error('accept-necessary-cookies knapp hittades inte');
                 }
                 
                 if (rejectBtn) {
                     rejectBtn.addEventListener('click', () => {
-                        console.log('Avvisa cookies klickad');
                         this.rejectCookies();
                     });
-                } else {
-                    console.error('reject-cookies knapp hittades inte');
                 }
                 
                 // Cookie settings modal
@@ -1998,10 +1999,8 @@ updateTopplistan();
             showCookieBanner() {
                 const banner = document.getElementById('cookie-banner');
                 if (banner) {
-                    banner.style.display = 'block';
+                    banner.style.display = 'flex';
                     console.log('Cookie banner visas');
-                } else {
-                    console.error('Cookie banner hittades inte');
                 }
             }
             
@@ -2009,12 +2008,7 @@ updateTopplistan();
                 const banner = document.getElementById('cookie-banner');
                 if (banner) {
                     banner.style.display = 'none';
-                    banner.style.visibility = 'hidden';
-                    banner.style.opacity = '0';
-                    banner.style.pointerEvents = 'none';
                     console.log('Cookie banner dold');
-                } else {
-                    console.error('Cookie banner hittades inte vid döljning');
                 }
             }
             
