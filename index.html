@@ -1295,7 +1295,7 @@
         document.querySelector('footer .footer-content p:first-of-type').innerHTML = 
             `&copy; ${currentYear} Prylval. Alla rättigheter förbehållna.`;
         
-        // Smooth scroll för alla ankarlänkar
+        // Smooth scroll för alla ankarlänkar utan att ändra URL:en
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1305,6 +1305,7 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                    // Uppdatera inte URL:en - behåll samma adress
                 }
             });
         });
