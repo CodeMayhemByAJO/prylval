@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integritetspolicy - Prylval.se</title>
+    <meta name="description" content="Läs om hur Prylval hanterar din personliga information och cookies. Vi värnar om din integritet och följer GDPR.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Integritetspolicy - Prylval.se">
+    <meta property="og:description" content="Läs om hur Prylval hanterar din personliga information och cookies. Vi värnar om din integritet och följer GDPR.">
+    <meta property="og:url" content="https://www.prylval.se/integritetspolicy.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.prylval.se/integritetspolicy.html">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Integritetspolicy",
+        "url": "https://www.prylval.se/integritetspolicy.html",
+        "description": "Integritetspolicy för Prylval.se",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prylval",
+            "url": "https://www.prylval.se"
+        }
+    }
+    </script>
+    
+    <style>
+        /* Reset och basstilar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        /* Skip to content */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .tagline {
+            display: none;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.2rem;
+        }
+        
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover,
+        nav a:focus {
+            color: #2563eb;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            background: #f8fafc;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main content */
+        main {
+            padding: 2rem 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        
+        .content-section h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #334155;
+        }
+        
+        .content-section p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+        
+        .content-section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .content-section li {
+            margin-bottom: 0.5rem;
+            color: #475569;
+        }
+        
+        .highlight-box {
+            background: #f1f5f9;
+            border-left: 4px solid #2563eb;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover,
+        .footer-links a:focus {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .tagline {
+                display: block;
+            }
+        }
+        
+        /* Focus states */
+        a:focus,
+        button:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <a id="top"></a>
+    <a href="#main-content" class="skip-link">Hoppa till innehåll</a>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="index.html" class="logo">Prylval</a>
+                    <div class="tagline">Bästa prylarna – jämförelser, tester och topplistor</div>
+                </div>
+                <button class="nav-toggle" aria-label="Öppna meny">☰</button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="index.html#senaste-tester">Senaste Tester</a></li>
+                        <li><a href="index.html#topplistan">Topplistan</a></li>
+                        <li><a href="index.html#kategorier">Kategorier</a></li>
+                        <li><a href="index.html#om-prylval">Om Prylval</a></li>
+                        <li><a href="index.html#kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Hem</a> > Integritetspolicy
+        </div>
+    </div>
+
+    <main id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Integritetspolicy</h1>
+                <p>Vi värnar om din integritet och är transparenta med hur vi hanterar din information</p>
+            </div>
+
+            <div class="content-section">
+                <h2>1. Introduktion</h2>
+                <p>Denna integritetspolicy beskriver hur Prylval (även kallat "vi", "oss" eller "vår") samlar in, använder och skyddar din personliga information när du besöker vår webbplats prylval.se.</p>
+                <p>Vi följer gällande svensk och europeisk lagstiftning, inklusive GDPR (General Data Protection Regulation), och vi är engagerade i att skydda din personliga integritet.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>2. Information vi samlar in</h2>
+                
+                <h3>2.1 Information du ger oss</h3>
+                <p>Vi samlar endast in personlig information som du aktivt ger oss, till exempel:</p>
+                <ul>
+                    <li>E-postadress (när du kontaktar oss via kontaktformulär)</li>
+                    <li>Namn (när du kontaktar oss)</li>
+                    <li>Meddelanden du skickar till oss</li>
+                </ul>
+
+                <h3>2.2 Automatiskt insamlad information</h3>
+                <p>När du besöker vår webbplats samlar vi automatiskt in viss teknisk information:</p>
+                <ul>
+                    <li>IP-adress</li>
+                    <li>Webbläsartyp och version</li>
+                    <li>Operativsystem</li>
+                    <li>Besöksdatum och tid</li>
+                    <li>Sidor du besöker</li>
+                    <li>Referrerande webbplats</li>
+                </ul>
+
+                <h3>2.3 Cookies</h3>
+                <p>Vi använder cookies för att förbättra din upplevelse på webbplatsen. Läs mer i vår <a href="cookies.html">cookie-policy</a>.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>3. Hur vi använder din information</h2>
+                <p>Vi använder den insamlade informationen för att:</p>
+                <ul>
+                    <li>Förbättra och underhålla vår webbplats</li>
+                    <li>Analysera webbplatsens användning och prestanda</li>
+                    <li>Svara på dina frågor och förfrågningar</li>
+                    <li>Skicka dig relevant information om våra tjänster (endast med ditt samtycke)</li>
+                    <li>Följa gällande lagar och regler</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>4. Delning av information</h2>
+                <p>Vi delar inte din personliga information med tredje part, förutom i följande fall:</p>
+                <ul>
+                    <li>När det krävs enligt lag</li>
+                    <li>För att skydda våra rättigheter eller säkerhet</li>
+                    <li>Med ditt uttryckliga samtycke</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>Viktigt</h4>
+                    <p>Vi säljer aldrig, hyr ut eller delar din personliga information med tredje part för kommersiella syften.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>5. Dina rättigheter</h2>
+                <p>Enligt GDPR har du följande rättigheter:</p>
+                <ul>
+                    <li><strong>Rätt till information:</strong> Du har rätt att veta vilken information vi har om dig</li>
+                    <li><strong>Rätt till åtkomst:</strong> Du kan begära en kopia av din personliga information</li>
+                    <li><strong>Rätt till rättelse:</strong> Du kan begära att felaktig information rättas</li>
+                    <li><strong>Rätt till radering:</strong> Du kan begära att din information raderas</li>
+                    <li><strong>Rätt till begränsning:</strong> Du kan begära att vi begränsar hur vi använder din information</li>
+                    <li><strong>Rätt till dataportabilitet:</strong> Du kan begära att din information överförs i ett strukturerat format</li>
+                    <li><strong>Rätt att invända:</strong> Du kan invända mot vår behandling av din information</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>6. Datasäkerhet</h2>
+                <p>Vi implementerar lämpliga tekniska och organisatoriska säkerhetsåtgärder för att skydda din personliga information mot:</p>
+                <ul>
+                    <li>Obehörig åtkomst</li>
+                    <li>Oavsiktlig förlust</li>
+                    <li>Obehörig ändring</li>
+                    <li>Obehörig spridning</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>7. Lagring av data</h2>
+                <p>Vi behåller din personliga information endast så länge det är nödvändigt för de ändamål som beskrivs i denna policy, eller så länge som krävs enligt lag.</p>
+                <p>När vi inte längre behöver din information raderar vi den säkert eller anonymiserar den.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>8. Ändringar i denna policy</h2>
+                <p>Vi kan uppdatera denna integritetspolicy från tid till annan. När vi gör väsentliga ändringar kommer vi att:</p>
+                <ul>
+                    <li>Meddela dig via webbplatsen</li>
+                    <li>Uppdatera "Senast uppdaterad"-datumet</li>
+                    <li>Ge dig möjlighet att granska ändringarna</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>9. Kontakt</h2>
+                <p>Om du har frågor om denna integritetspolicy eller vill utöva dina rättigheter, kontakta oss:</p>
+                <ul>
+                    <li><strong>E-post:</strong> <a href="mailto:info@prylval.se?subject=Integritet">info@prylval.se</a></li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <h4>Dataskyddsombud</h4>
+                    <p>Du kan också kontakta Datainspektionen om du har klagomål på hur vi hanterar din personliga information.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>10. Senast uppdaterad</h2>
+                <p>Denna integritetspolicy senast uppdaterades: <strong>januari 2025</strong></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="integritetspolicy.html">Integritetspolicy</a>
+                    <a href="anvandarvillkor.html">Användarvillkor</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+                <p>&copy; 2025 Prylval. Alla rättigheter förbehållna.</p>
+                <p>Senast uppdaterad: januari 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobilmeny toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('nav ul');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Stäng menyn när man klickar på en länk
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Uppdatera året i footer automatiskt
+        const currentYear = new Date().getFullYear();
+        document.querySelector('footer .footer-content p:first-of-type').innerHTML = 
+            `&copy; ${currentYear} Prylval. Alla rättigheter förbehållna.`;
+    </script>
+</body>
+</html>

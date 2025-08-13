@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie-policy - Prylval.se</title>
+    <meta name="description" content="Läs om hur Prylval använder cookies för att förbättra din upplevelse på webbplatsen. Vi förklarar vilka cookies vi använder och varför.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Cookie-policy - Prylval.se">
+    <meta property="og:description" content="Läs om hur Prylval använder cookies för att förbättra din upplevelse på webbplatsen. Vi förklarar vilka cookies vi använder och varför.">
+    <meta property="og:url" content="https://www.prylval.se/cookies.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.prylval.se/cookies.html">
+    
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Cookie-policy",
+        "url": "https://www.prylval.se/cookies.html",
+        "description": "Cookie-policy för Prylval.se",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prylval",
+            "url": "https://www.prylval.se"
+        }
+    }
+    </script>
+    
+    <style>
+        /* Reset och basstilar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        /* Skip to content */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: #000;
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+        
+        .skip-link:focus {
+            top: 6px;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .tagline {
+            display: none;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.2rem;
+        }
+        
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover,
+        nav a:focus {
+            color: #2563eb;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            background: #f8fafc;
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .breadcrumb a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main content */
+        main {
+            padding: 2rem 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+        
+        .content-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        
+        .content-section h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.5rem 0;
+            color: #334155;
+        }
+        
+        .content-section p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+        
+        .content-section ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+        
+        .content-section li {
+            margin-bottom: 0.5rem;
+            color: #475569;
+        }
+        
+        .highlight-box {
+            background: #f1f5f9;
+            border-left: 4px solid #2563eb;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .cookie-table th,
+        .cookie-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .cookie-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .cookie-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .cookie-type {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .cookie-type.necessary {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .cookie-type.analytics {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        .cookie-type.functional {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover,
+        .footer-links a:focus {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .tagline {
+                display: block;
+            }
+            
+            .cookie-table {
+                font-size: 0.9rem;
+            }
+            
+            .cookie-table th,
+            .cookie-table td {
+                padding: 0.75rem 0.5rem;
+            }
+        }
+        
+        /* Focus states */
+        a:focus,
+        button:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <a id="top"></a>
+    <a href="#main-content" class="skip-link">Hoppa till innehåll</a>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="index.html" class="logo">Prylval</a>
+                    <div class="tagline">Bästa prylarna – jämförelser, tester och topplistor</div>
+                </div>
+                <button class="nav-toggle" aria-label="Öppna meny">☰</button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Hem</a></li>
+                        <li><a href="index.html#senaste-tester">Senaste Tester</a></li>
+                        <li><a href="index.html#topplistan">Topplistan</a></li>
+                        <li><a href="index.html#kategorier">Kategorier</a></li>
+                        <li><a href="index.html#om-prylval">Om Prylval</a></li>
+                        <li><a href="index.html#kontakt">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Hem</a> > Cookie-policy
+        </div>
+    </div>
+
+    <main id="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Cookie-policy</h1>
+                <p>Vi använder cookies för att förbättra din upplevelse på Prylval.se</p>
+            </div>
+
+            <div class="content-section">
+                <h2>1. Vad är cookies?</h2>
+                <p>Cookies är små textfiler som lagras på din enhet (dator, mobil eller surfplatta) när du besöker en webbplats. De hjälper webbplatsen att komma ihåg information om ditt besök, vilket kan göra det enklare att besöka webbplatsen igen och göra den mer användbar.</p>
+                
+                <div class="highlight-box">
+                    <h4>Enkelt förklarat</h4>
+                    <p>Cookies är som små lappar som webbplatsen lämnar på din enhet för att komma ihåg saker om dig.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>2. Vilka cookies använder vi?</h2>
+                <p>Prylval.se använder olika typer av cookies för olika syften:</p>
+                
+                <h3>2.1 Nödvändiga cookies</h3>
+                <p>Dessa cookies är nödvändiga för att webbplatsen ska fungera korrekt. De kan inte stängas av och lagrar ingen personlig information.</p>
+                
+                <h3>2.2 Analytics-cookies</h3>
+                <p>Vi använder Google Analytics för att förstå hur besökare använder vår webbplats. Detta hjälper oss att förbättra webbplatsen och ge dig bättre innehåll.</p>
+                
+                <h3>2.3 Funktionalitetscookies</h3>
+                <p>Dessa cookies förbättrar funktionaliteten och personlig anpassningen av webbplatsen.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>3. Detaljerad cookie-lista</h2>
+                <p>Här är en detaljerad lista över alla cookies vi använder:</p>
+                
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Cookie-namn</th>
+                            <th>Syfte</th>
+                            <th>Typ</th>
+                            <th>Varaktighet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>_ga</td>
+                            <td>Google Analytics - spårar besökare och sessioner</td>
+                            <td><span class="cookie-type analytics">Analytics</span></td>
+                            <td>2 år</td>
+                        </tr>
+                        <tr>
+                            <td>_ga_*</td>
+                            <td>Google Analytics - spårar besökare över sessioner</td>
+                            <td><span class="cookie-type analytics">Analytics</span></td>
+                            <td>2 år</td>
+                        </tr>
+                        <tr>
+                            <td>_gid</td>
+                            <td>Google Analytics - spårar besökare per dag</td>
+                            <td><span class="cookie-type analytics">Analytics</span></td>
+                            <td>24 timmar</td>
+                        </tr>
+                        <tr>
+                            <td>_gat</td>
+                            <td>Google Analytics - begränsar antalet förfrågningar</td>
+                            <td><span class="cookie-type analytics">Analytics</span></td>
+                            <td>1 minut</td>
+                        </tr>
+                        <tr>
+                            <td>cookie_consent</td>
+                            <td>Sparar ditt samtycke till cookies</td>
+                            <td><span class="cookie-type necessary">Nödvändig</span></td>
+                            <td>1 år</td>
+                        </tr>
+                        <tr>
+                            <td>language</td>
+                            <td>Sparar ditt språkval</td>
+                            <td><span class="cookie-type functional">Funktionalitet</span></td>
+                            <td>1 år</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-section">
+                <h2>4. Tredjepartscookies</h2>
+                
+                <h3>4.1 Google Analytics</h3>
+                <p>Vi använder Google Analytics för att analysera webbplatsens användning. Google Analytics använder cookies för att samla in information om:</p>
+                <ul>
+                    <li>Hur många besökare vi har</li>
+                    <li>Vilka sidor som är mest populära</li>
+                    <li>Varifrån besökarna kommer</li>
+                    <li>Hur länge besökarna stannar</li>
+                </ul>
+                
+                <p>Google Analytics-cookies lagrar ingen personlig information. Du kan läsa mer om Google Analytics cookies på <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noopener">Google's webbplats</a>.</p>
+                
+                <h3>4.2 Affiliate-partners</h3>
+                <p>Vissa av våra affiliate-partners kan sätta cookies för att spåra klick och konverteringar. Dessa cookies hjälper oss att förstå hur våra rekommendationer presterar.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>5. Hantera cookies</h2>
+                
+                <h3>5.1 Webbläsarinställningar</h3>
+                <p>Du kan hantera cookies genom dina webbläsarinställningar:</p>
+                <ul>
+                    <li><strong>Chrome:</strong> Inställningar > Avancerat > Sekretess och säkerhet > Cookies</li>
+                    <li><strong>Firefox:</strong> Inställningar > Sekretess och säkerhet > Cookies</li>
+                    <li><strong>Safari:</strong> Inställningar > Sekretess > Hantera webbplatsdata</li>
+                    <li><strong>Edge:</strong> Inställningar > Cookies och webbplatsbehörigheter</li>
+                </ul>
+                
+                <h3>5.2 Google Analytics Opt-out</h3>
+                <p>För att avaktivera Google Analytics spårning kan du använda <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+                
+                <div class="highlight-box">
+                    <h4>Viktigt</h4>
+                    <p>Om du stänger av cookies kan vissa funktioner på webbplatsen inte fungera korrekt.</p>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>6. Ditt samtycke</h2>
+                <p>När du först besöker Prylval.se kommer du att se en cookie-banner som frågar om du accepterar cookies. Du kan:</p>
+                <ul>
+                    <li><strong>Acceptera alla cookies:</strong> Tillåt alla typer av cookies</li>
+                    <li><strong>Acceptera endast nödvändiga:</strong> Tillåt endast cookies som behövs för webbplatsens funktion</li>
+                    <li><strong>Avvisa:</strong> Stäng av alla icke-nödvändiga cookies</li>
+                </ul>
+                
+                <p>Du kan när som helst ändra dina inställningar genom att klicka på "Cookie-inställningar" i footern.</p>
+            </div>
+
+            <div class="content-section">
+                <h2>7. Uppdateringar av denna policy</h2>
+                <p>Vi kan uppdatera denna cookie-policy när vi ändrar hur vi använder cookies. När vi gör väsentliga ändringar kommer vi att:</p>
+                <ul>
+                    <li>Meddela dig via webbplatsen</li>
+                    <li>Uppdatera "Senast uppdaterad"-datumet</li>
+                    <li>Ge dig möjlighet att granska ändringarna</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>8. Kontakt</h2>
+                <p>Om du har frågor om vår användning av cookies, kontakta oss:</p>
+                <ul>
+                    <li><strong>E-post:</strong> <a href="mailto:cookies@prylval.se">cookies@prylval.se</a></li>
+                    <li><strong>Postadress:</strong> Prylval, [Adress], Sverige</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>9. Senast uppdaterad</h2>
+                <p>Denna cookie-policy senast uppdaterades: <strong>januari 2025</strong></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="integritetspolicy.html">Integritetspolicy</a>
+                    <a href="anvandarvillkor.html">Användarvillkor</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+                <p>&copy; 2025 Prylval. Alla rättigheter förbehållna.</p>
+                <p>Senast uppdaterad: januari 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobilmeny toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('nav ul');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Stäng menyn när man klickar på en länk
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Uppdatera året i footer automatiskt
+        const currentYear = new Date().getFullYear();
+        document.querySelector('footer .footer-content p:first-of-type').innerHTML = 
+            `&copy; ${currentYear} Prylval. Alla rättigheter förbehållna.`;
+    </script>
+</body>
+</html>
