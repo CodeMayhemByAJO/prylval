@@ -853,11 +853,17 @@
             }
         }
         
-        /* Focus states */
-        a:focus,
-        button:focus {
+        /* Focus states - endast vid tangentbordsnavigering */
+        a:focus-visible,
+        button:focus-visible {
             outline: 2px solid #475569;
             outline-offset: 2px;
+        }
+        
+        /* Ta bort outline vid musklick */
+        a:focus:not(:focus-visible),
+        button:focus:not(:focus-visible) {
+            outline: none;
         }
         
         /* Affiliate disclosure */
@@ -1916,11 +1922,72 @@ function updateTopplistan() {
     });
 }
 
-// Ladda vid start
-updateTopplistan();
+function getTopplistanForDate(date) {
+    // Använd datumet som seed för att få samma ordning samma dag
+    const dateString = date.toDateString();
+    let seed = 0;
+    for (let i = 0; i < dateString.length; i++) {
+        seed += dateString.charCodeAt(i);
+    }
+    
+    // Skapa en pseudo-random ordning baserad på datumet
+    const shuffled = [...allProducts].sort((a, b) => {
+        const hashA = (a.title + a.category).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+        const hashB = (b.title + b.category).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+        return (hashA + seed) % allProducts.length - (hashB + seed) % allProducts.length;
+    });
+    
+    return shuffled.slice(0, 6);
+}
 
-        // Byt var 8:e timme (3 ggr/dygn)
-        setInterval(updateTopplistan, 8 * 60 * 60 * 1000);
+function renderTopplistan() {
+    const container = document.querySelector('#topplistan .cards-grid');
+    container.innerHTML = "";
+
+    // Hämta topplistan för dagens datum
+    const today = new Date();
+    const products = getTopplistanForDate(today);
+
+    products.forEach((product, index) => {
+        const rank = index + 1;
+        container.innerHTML += `
+            <article class="card topplistan-card">
+                <div class="rank-number">${rank}</div>
+                <div class="product-image">
+                    <picture>
+                        <source srcset="${product.img}" type="image/avif">
+                        <img src="${product.img.replace('.avif', '.jpg')}" alt="${product.title}" width="80" height="80" loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <div class="product-category">${product.category}</div>
+                    <h3>${product.title}</h3>
+                    <p>${product.text}</p>
+                    <div class="card-footer">
+                        <a href="${product.link}" class="card-btn">Läs guiden</a>
+                    </div>
+                </div>
+            </article>
+        `;
+    });
+}
+
+// Ladda vid start
+renderTopplistan();
+
+// Kontrollera om topplistan ska uppdateras (2 gånger per dag: 00:00 och 12:00)
+function checkTopplistanUpdate() {
+    const now = new Date();
+    const hour = now.getHours();
+    
+    // Uppdatera vid midnatt (00:00) och lunch (12:00)
+    if (hour === 0 || hour === 12) {
+        renderTopplistan();
+    }
+}
+
+// Kontrollera varje timme om uppdatering behövs
+setInterval(checkTopplistanUpdate, 60 * 60 * 1000);
     </script>
 
     <script>
