@@ -30,7 +30,7 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Prylval",
+        "name": "Prylval.se",
         "url": "https://www.prylval.se",
         "description": "Prylval hjälper dig hitta rätt pryl med tydliga jämförelser, tester och topplistor",
         "publisher": {
@@ -106,9 +106,19 @@
         
         .logo {
             font-size: 1.8rem;
-            font-weight: 700;
-            color: #2563eb;
+            font-weight: 800;
+            color: #1e293b;
             text-decoration: none;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+        
+        .logo::before {
+            content: '⚡';
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            opacity: 0.7;
+            vertical-align: middle;
         }
         
         .tagline {
@@ -142,29 +152,54 @@
         
         nav a:hover,
         nav a:focus {
-            color: #2563eb;
+            color: #475569;
         }
         
-        /* Hero */
+        /* Hero - Modern design */
         .hero {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
             color: white;
-            padding: 4rem 0;
+            padding: 6rem 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
+            opacity: 0.95;
         }
         
         .hero-buttons {
@@ -176,37 +211,44 @@
         
         .btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
+            padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.2s;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             border: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn-primary {
-            background: #fff;
-            color: #2563eb;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            color: #1e293b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         
         .btn-primary:hover,
         .btn-primary:focus {
-            background: #f1f5f9;
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
         
         .btn-secondary {
             background: transparent;
             color: white;
-            border: 2px solid white;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
         }
         
         .btn-secondary:hover,
         .btn-secondary:focus {
-            background: white;
-            color: #2563eb;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
         }
         
         /* Trust section */
@@ -237,6 +279,43 @@
             color: #1e293b;
         }
         
+        /* Breadcrumb - Modern design */
+        .breadcrumb {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 1.5rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .breadcrumb .container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .breadcrumb a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #1e293b;
+            text-decoration: underline;
+        }
+        
+        .breadcrumb .separator {
+            color: #94a3b8;
+            margin: 0 0.25rem;
+        }
+        
+        .breadcrumb .current {
+            color: #64748b;
+            font-weight: 600;
+        }
+        
         /* Cards section */
         .cards-section {
             padding: 4rem 0;
@@ -253,23 +332,213 @@
             color: #1e293b;
         }
         
+        .navigation-actions {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .back-btn {
+            background: #f8fafc;
+            color: #475569;
+            border: 2px solid #e2e8f0;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.5rem;
+        }
+        
+        .back-btn:hover {
+            background: #f1f5f9;
+            color: #1e293b;
+            border-color: #cbd5e1;
+        }
+        
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
         
+        /* Topplistan-specifik grid för 6 produkter */
+        #topplistan .cards-grid {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        /* Kategorier-sektion - Modern design */
+        .categories-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .category-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            min-height: 80px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .category-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #475569, #64748b);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-item:hover,
+        .category-item:focus {
+            border-color: #475569;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(71, 85, 105, 0.15);
+            color: #475569;
+        }
+        
+        .category-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .category-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .category-item::after {
+            content: '→';
+            position: absolute;
+            right: 1.5rem;
+            font-size: 1.2rem;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+        }
+        
+        .category-item:hover::after {
+            color: #475569;
+            transform: translateX(4px);
+        }
+        
         .card {
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #f1f5f9;
         }
         
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+            border-color: #e2e8f0;
+        }
+        
+        /* Topplistan-specifika stilar */
+        .topplistan-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        
+        .topplistan-card:hover {
+            border-color: #475569;
+            box-shadow: 0 4px 12px rgba(71, 85, 105, 0.1);
+        }
+        
+        .topplistan-card .rank-number {
+            background: #475569;
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .topplistan-card .product-image {
+            flex-shrink: 0;
+        }
+        
+        .topplistan-card .product-image img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .topplistan-card .card-content {
+            flex: 1;
+            padding: 0;
+            min-width: 0; /* Förbättrar text-truncation */
+        }
+        
+        .topplistan-card .product-category {
+            color: #64748b;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .topplistan-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+            line-height: 1.3;
+        }
+        
+        .topplistan-card p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 0.75rem;
+            color: #475569;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .topplistan-card .card-footer {
+            margin-top: 0;
+        }
+        
+        .topplistan-card .card-btn {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.8rem;
         }
         
         .card img {
@@ -503,6 +772,51 @@
                 grid-template-columns: 1fr;
             }
             
+            .topplistan-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .topplistan-card .rank-number {
+                margin-top: 0;
+                align-self: center;
+            }
+            
+            .topplistan-card .product-image img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .topplistan-card h3 {
+                font-size: 1rem;
+            }
+            
+            .topplistan-card p {
+                font-size: 0.85rem;
+                -webkit-line-clamp: 3;
+            }
+            
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+            
+            .category-item {
+                padding: 1.25rem;
+                min-height: 70px;
+            }
+            
+            .category-name {
+                font-size: 1rem;
+            }
+            
+            .category-item::after {
+                right: 1.25rem;
+                font-size: 1.1rem;
+            }
+            
             .trust-grid {
                 grid-template-columns: 1fr;
             }
@@ -521,7 +835,7 @@
         /* Focus states */
         a:focus,
         button:focus {
-            outline: 2px solid #2563eb;
+            outline: 2px solid #475569;
             outline-offset: 2px;
         }
         
@@ -539,7 +853,7 @@
         <div class="container">
             <div class="header-content">
                 <div>
-                    <a href="#top" class="logo">Prylval</a>
+                    <a href="#top" class="logo">Prylval.se</a>
                     <div class="tagline">Bästa prylarna – jämförelser, tester och topplistor</div>
                 </div>
                 <button class="nav-toggle" aria-label="Öppna meny">☰</button>
@@ -556,6 +870,8 @@
             </div>
         </div>
     </header>
+
+
 
     <main id="main-content">
         <section id="hero" class="hero">
@@ -741,7 +1057,7 @@
             <div class="container">
                 <div class="section-header">
                     <h2>Topplistan</h2>
-                    <p>En sammanfattning av våra senaste tester och rekommendationer</p>
+                    <p>Våra mest lästa tester och rekommendationer just nu</p>
                 </div>
                 <div class="cards-grid">
                     <article class="card">
@@ -824,89 +1140,72 @@
             </div>
         </section>
 
-        <section id="kategorier" class="cards-section">
+        <section id="kategorier" class="categories-section">
             <div class="container">
                 <div class="section-header">
                     <h2>Alla produktkategorier</h2>
                     <p>Utforska våra tester och jämförelser inom varje produktområde</p>
+                    <div class="navigation-actions">
+                        <a href="#top" class="btn btn-secondary back-btn">
+                            ← Tillbaka till toppen
+                        </a>
+                    </div>
                 </div>
-                <div class="cards-grid">
-                    <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Robotdammsugare" alt="Robotdammsugare som arbetar på golvet">
-                        <div class="card-content">
-                            <h3>Robotdammsugare</h3>
-                            <p>Smart städning för det moderna hemmet med kartläggning och navigering.</p>
-                            <div class="card-footer">
-                                <a href="robotdammsugare.html" class="card-btn">Läs guiden</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Träningsklocka" alt="Träningsklocka med fitness-tracking">
-                        <div class="card-content">
-                            <h3>Träningsklockor</h3>
-                            <p>Fitness-tracking och hälsövervakning för iPhone och Android.</p>
-                            <div class="card-footer">
-                                <a href="traningsklockor.html" class="card-btn">Läs guiden</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Hörlurar" alt="Brusreducerande hörlurar">
-                        <div class="card-content">
-                            <h3>Brusreducerande hörlurar</h3>
-                            <p>Perfekta för pendling och kontor med ANC-teknik.</p>
-                            <div class="card-footer">
-                                <a href="horlurar-anc.html" class="card-btn">Läs guiden</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Mesh+WiFi" alt="Mesh WiFi-system för hem">
-                        <div class="card-content">
-                            <h3>Mesh WiFi</h3>
-                            <p>Snabb och stabil internetuppkoppling i hela huset.</p>
-                            <div class="card-footer">
-                                <a href="mesh-wifi.html" class="card-btn">Läs guiden</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Airfryer" alt="Airfryer för fritering utan olja">
-                        <div class="card-content">
-                            <h3>Airfryers</h3>
-                            <p>Krispiga rätter med minimalt med olja för hela familjen.</p>
-                            <div class="card-footer">
-                                <a href="airfryers.html" class="card-btn">Läs guiden</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Torktumlare" alt="Torktumlare för effektiv tvättvård">
-                        <div class="card-content">
-                            <h3>Torktumlare</h3>
-                            <p>Effektiv tvättvård med energisnåla alternativ.</p>
-                            <div class="card-footer">
-                                <a href="torktumlare.html" class="card-btn">Läs guiden</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Tvättmaskin" alt="Tvättmaskin med moderna funktioner">
-                        <div class="card-content">
-                            <h3>Tvättmaskiner</h3>
-                            <p>Moderna tvättmaskiner för olika familjestorlekar.</p>
-                            <div class="card-footer">
-                                <a href="tvattmaskiner.html" class="card-btn">Läs guiden</a>
-                            </div>
-                        </div>
-                    </article>
+                <div class="categories-grid">
+                    <a href="airfryers.html" class="category-item">
+                        <span class="category-name">Airfryers</span>
+                    </a>
+                    <a href="dammsugare.html" class="category-item">
+                        <span class="category-name">Dammsugare</span>
+                    </a>
+                    <a href="datorer.html" class="category-item">
+                        <span class="category-name">Datorer</span>
+                    </a>
+                    <a href="gaming.html" class="category-item">
+                        <span class="category-name">Gaming</span>
+                    </a>
+                    <a href="horlurar.html" class="category-item">
+                        <span class="category-name">Hörlurar</span>
+                    </a>
+                    <a href="kameror.html" class="category-item">
+                        <span class="category-name">Kameror</span>
+                    </a>
+                    <a href="koksapparater.html" class="category-item">
+                        <span class="category-name">Köksapparater</span>
+                    </a>
+                    <a href="ljud-bild.html" class="category-item">
+                        <span class="category-name">Ljud & Bild</span>
+                    </a>
+                    <a href="mobiltelefoner.html" class="category-item">
+                        <span class="category-name">Mobiltelefoner</span>
+                    </a>
+                    <a href="nätverk.html" class="category-item">
+                        <span class="category-name">Nätverk</span>
+                    </a>
+                    <a href="robotdammsugare.html" class="category-item">
+                        <span class="category-name">Robotdammsugare</span>
+                    </a>
+                    <a href="smart-hem.html" class="category-item">
+                        <span class="category-name">Smart Hem</span>
+                    </a>
+                    <a href="tablets.html" class="category-item">
+                        <span class="category-name">Tablets</span>
+                    </a>
+                    <a href="traningsklockor.html" class="category-item">
+                        <span class="category-name">Träningsklockor</span>
+                    </a>
+                    <a href="tvattmaskiner.html" class="category-item">
+                        <span class="category-name">Tvättmaskiner</span>
+                    </a>
+                    <a href="torktumlare.html" class="category-item">
+                        <span class="category-name">Torktumlare</span>
+                    </a>
+                    <a href="vitvaror.html" class="category-item">
+                        <span class="category-name">Vitvaror</span>
+                    </a>
+                    <a href="wearables.html" class="category-item">
+                        <span class="category-name">Wearables</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -929,9 +1228,9 @@
             <div class="about-content" style="flex: 1;">
                 <h2>Om Prylval</h2>
                 <p>Prylval grundades av en enkel insikt: det är svårt att hitta rätt produkt i dagens överflöd av val. Vi tror att bra köpbeslut bygger på tydlig information, inte reklam.</p>
-                <p>Vår redaktionella röst, Pryl-Nils, är en sann tekniknörd som gör komplexa produktspecifikationer begripliga för vanliga konsumenter. Han testar, jämför och förklarar så att du kan fokusera på det som verkligen betyder något.</p>
+                <p>Vår redaktionella röst, Pryl-Nisse, är en sann tekniknörd som gör komplexa produktspecifikationer begripliga för vanliga konsumenter. Han testar, jämför och förklarar så att du kan fokusera på det som verkligen betyder något.</p>
                 <div class="persona-note">
-                    <strong>Viktigt:</strong> Pryl-Nils är en redaktionell persona – inte en verklig person – som används för att göra texter mer lättläsa och engagerande.
+                    <strong>Viktigt:</strong> Pryl-Nisse är en redaktionell persona – inte en verklig person – som används för att göra texter mer lättläsa och engagerande.
                 </div>
             </div>
 
@@ -995,6 +1294,128 @@
         const currentYear = new Date().getFullYear();
         document.querySelector('footer .footer-content p:first-of-type').innerHTML = 
             `&copy; ${currentYear} Prylval. Alla rättigheter förbehållna.`;
+        
+        // Smooth scroll för alla ankarlänkar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
+    <script>
+const allProducts = [
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "iRobot Roomba j7+", 
+        link: "irobot-roomba-j7-plus.html", 
+        text: "Smart robotdammsugare med AI-kartläggning och automatisk tömning.",
+        category: "Robotdammsugare"
+    },
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "Apple Watch Series 9", 
+        link: "apple-watch-series-9.html", 
+        text: "Avancerad träningsklocka med S9-chip och förbättrad hjärtfrekvensmätning.",
+        category: "Träningsklockor"
+    },
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "Sony WH-1000XM5", 
+        link: "sony-wh-1000xm5.html", 
+        text: "Världens bästa brusreducerande hörlurar med 30h batteritid.",
+        category: "Hörlurar"
+    },
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "Google Nest Wifi Pro", 
+        link: "google-nest-wifi-pro.html", 
+        text: "Mesh WiFi-system för snabb och stabil uppkoppling i hela huset.",
+        category: "Mesh WiFi"
+    },
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "Ninja Foodi MAX", 
+        link: "ninja-foodi-max.html", 
+        text: "Airfryer med stor kapacitet och flera koksätt för krispiga rätter.",
+        category: "Airfryers"
+    },
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "Samsung DV90T5240AE", 
+        link: "samsung-dv90t5240ae.html", 
+        text: "Energisnål torktumlare med smarta funktioner och stor kapacitet.",
+        category: "Torktumlare"
+    },
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "LG F4WV510S", 
+        link: "lg-f4wv510s.html", 
+        text: "Modern tvättmaskin med energiklass A och stor kapacitet.",
+        category: "Tvättmaskiner"
+    },
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "Dyson V15 Detect", 
+        link: "dyson-v15-detect.html", 
+        text: "Kabeltrådlös dammsugare med laser-teknik för synlig damm.",
+        category: "Robotdammsugare"
+    },
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "Garmin Fenix 7", 
+        link: "garmin-fenix-7.html", 
+        text: "Premium multisport-klocka med GPS och lång batteritid.",
+        category: "Träningsklockor"
+    },
+    { 
+        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        title: "Bose QuietComfort 45", 
+        link: "bose-quietcomfort-45.html", 
+        text: "Bekväma hörlurar med världsledande brusreducering.",
+        category: "Hörlurar"
+    }
+];
+
+function updateTopplistan() {
+    const container = document.querySelector('#topplistan .cards-grid');
+    container.innerHTML = "";
+
+    // Blanda produkterna och ta de första 6
+    const shuffled = allProducts.sort(() => 0.5 - Math.random()).slice(0, 6);
+
+    shuffled.forEach((product, index) => {
+        const rank = index + 1;
+        container.innerHTML += `
+            <article class="card topplistan-card">
+                <div class="rank-number">${rank}</div>
+                <div class="product-image">
+                    <img src="${product.img}" alt="${product.title}">
+                </div>
+                <div class="card-content">
+                    <div class="product-category">${product.category}</div>
+                    <h3>${product.title}</h3>
+                    <p>${product.text}</p>
+                    <div class="card-footer">
+                        <a href="${product.link}" class="card-btn">Läs guiden</a>
+                    </div>
+                </div>
+            </article>
+        `;
+    });
+}
+
+// Ladda vid start
+updateTopplistan();
+
+// Byt var 8:e timme (3 ggr/dygn)
+setInterval(updateTopplistan, 8 * 60 * 60 * 1000);
+</script>
 </body>
 </html>

@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bästa Airfryers 2025 - Prylval.se</title>
-    <meta name="description" content="Jämför årets bästa airfryers. Vi testar kapacitet, funktioner och resultat för olika maträtter. Hitta din perfekta airfryer.">
+    <title>Produktkategorier - Prylval.se</title>
+    <meta name="description" content="Utforska alla produktkategorier på Prylval.se. Hitta rätt pryl inom teknik, vitvaror, gaming och mer.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Bästa Airfryers 2025 - Prylval.se">
-    <meta property="og:description" content="Jämför årets bästa airfryers. Vi testar kapacitet, funktioner och resultat för olika maträtter.">
-    <meta property="og:url" content="https://www.prylval.se/airfryers.html">
+    <meta property="og:title" content="Produktkategorier - Prylval.se">
+    <meta property="og:description" content="Utforska alla produktkategorier på Prylval.se. Hitta rätt pryl inom teknik, vitvaror, gaming och mer.">
+    <meta property="og:url" content="https://www.prylval.se/kategorier.html">
     <meta property="og:type" content="website">
     
     <!-- Canonical -->
-    <link rel="canonical" href="https://www.prylval.se/airfryers.html">
+    <link rel="canonical" href="https://www.prylval.se/kategorier.html">
     
     <!-- Schema.org -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Bästa Airfryers 2025",
-        "url": "https://www.prylval.se/airfryers.html",
-        "description": "Jämförelse av årets bästa airfryers",
+        "name": "Produktkategorier",
+        "url": "https://www.prylval.se/kategorier.html",
+        "description": "Alla produktkategorier på Prylval.se",
         "publisher": {
             "@type": "Organization",
             "name": "Prylval",
@@ -196,118 +196,81 @@
             margin: 0 auto;
         }
         
-        /* Produktlista */
-        .products-section {
-            padding: 3rem 0;
+        /* Kategorier-sektion - Modern design */
+        .categories-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         }
         
-        .products-grid {
+        .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
-        .product-card {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid #f1f5f9;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-            border-color: #e2e8f0;
-        }
-        
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .product-content {
-            padding: 1.5rem;
-        }
-        
-        .product-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #1e293b;
-            font-weight: 700;
-        }
-        
-        .product-description {
-            color: #64748b;
-            margin-bottom: 1rem;
-            line-height: 1.5;
-        }
-        
-        .product-features {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        
-        .product-features li {
-            padding: 0.25rem 0;
-            color: #64748b;
+        .category-item {
             position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .product-features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-        }
-        
-        .product-link {
-            background: #475569;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            display: inline-block;
-            transition: background 0.2s;
-        }
-        
-        .product-link:hover {
-            background: #374151;
-        }
-        
-        /* Navigation actions */
-        .navigation-actions {
-            margin-top: 3rem;
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            align-items: center;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            min-height: 80px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.2s;
-            border: 2px solid #e2e8f0;
-            background: #f8fafc;
+        .category-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #475569, #64748b);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-item:hover,
+        .category-item:focus {
+            border-color: #475569;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(71, 85, 105, 0.15);
             color: #475569;
         }
         
-        .btn:hover {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
-            color: #1e293b;
+        .category-item:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .category-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .category-item::after {
+            content: '→';
+            position: absolute;
+            right: 1.5rem;
+            font-size: 1.2rem;
+            color: #94a3b8;
+            transition: all 0.3s ease;
+        }
+        
+        .category-item:hover::after {
+            color: #475569;
+            transform: translateX(4px);
         }
         
         /* Footer */
@@ -382,8 +345,23 @@
                 display: block;
             }
             
-            .products-grid {
-                grid-template-columns: 1fr;
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+            
+            .category-item {
+                padding: 1.25rem;
+                min-height: 70px;
+            }
+            
+            .category-name {
+                font-size: 1rem;
+            }
+            
+            .category-item::after {
+                right: 1.25rem;
+                font-size: 1.1rem;
             }
         }
         
@@ -430,67 +408,73 @@
         <div class="container">
             <a href="index.html">Hem</a>
             <span class="separator">/</span>
-            <a href="kategorier.html">Kategorier</a>
-            <span class="separator">/</span>
-            <span class="current">Airfryers</span>
+            <span class="current">Produktkategorier</span>
         </div>
     </div>
 
     <main id="main-content">
         <div class="container">
             <div class="page-header">
-                <h1>Bästa Airfryers 2025</h1>
-                <p>Jämför årets bästa airfryers. Vi testar kapacitet, funktioner och resultat för olika maträtter.</p>
+                <h1>Alla produktkategorier</h1>
+                <p>Utforska våra tester och jämförelser inom varje produktområde</p>
             </div>
 
-            <div class="products-section">
-                <div class="products-grid">
-                    <article class="product-card">
-                        <img src="media/products/ninja-foodi-max.webp" alt="Ninja Foodi MAX Airfryer" loading="lazy">
-                        <div class="product-content">
-                            <h3 class="product-title">Ninja Foodi MAX</h3>
-                            <p class="product-description">Airfryer med stor kapacitet och flera koksätt för krispiga rätter.</p>
-                            <ul class="product-features">
-                                <li>9.5L kapacitet</li>
-                                <li>7 koksätt</li>
-                                <li>Digital display</li>
-                            </ul>
-                            <a href="ninja-foodi-max.html" class="product-link">Läs mer</a>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <img src="media/products/philips-airfryer-xxl.jpg" alt="Philips Airfryer XXL" loading="lazy">
-                        <div class="product-content">
-                            <h3 class="product-title">Philips Airfryer XXL</h3>
-                            <p class="product-description">Premium airfryer med avancerad teknologi och stort koksutrymme.</p>
-                            <ul class="product-features">
-                                <li>8.2L kapacitet</li>
-                                <li>Digital display</li>
-                                <li>Keep warm-funktion</li>
-                            </ul>
-                            <a href="philips-airfryer-xxl.html" class="product-link">Läs mer</a>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <img src="media/products/cosori-air-fryer.jpg" alt="Cosori Air Fryer" loading="lazy">
-                        <div class="product-content">
-                            <h3 class="product-title">Cosori Air Fryer</h3>
-                            <p class="product-description">Smart airfryer med WiFi-anslutning och app-styrning.</p>
-                            <ul class="product-features">
-                                <li>5.5L kapacitet</li>
-                                <li>WiFi-anslutning</li>
-                                <li>100+ recept i appen</li>
-                            </ul>
-                            <a href="cosori-air-fryer.html" class="product-link">Läs mer</a>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="navigation-actions">
-                    <a href="kategorier.html" class="btn">← Tillbaka till kategorier</a>
-                    <a href="index.html" class="btn">← Tillbaka till startsidan</a>
+            <div class="categories-section">
+                <div class="categories-grid">
+                    <a href="airfryers.html" class="category-item">
+                        <span class="category-name">Airfryers</span>
+                    </a>
+                    <a href="dammsugare.html" class="category-item">
+                        <span class="category-name">Dammsugare</span>
+                    </a>
+                    <a href="datorer.html" class="category-item">
+                        <span class="category-name">Datorer</span>
+                    </a>
+                    <a href="gaming.html" class="category-item">
+                        <span class="category-name">Gaming</span>
+                    </a>
+                    <a href="horlurar.html" class="category-item">
+                        <span class="category-name">Hörlurar</span>
+                    </a>
+                    <a href="kameror.html" class="category-item">
+                        <span class="category-name">Kameror</span>
+                    </a>
+                    <a href="koksapparater.html" class="category-item">
+                        <span class="category-name">Köksapparater</span>
+                    </a>
+                    <a href="ljud-bild.html" class="category-item">
+                        <span class="category-name">Ljud & Bild</span>
+                    </a>
+                    <a href="mobiltelefoner.html" class="category-item">
+                        <span class="category-name">Mobiltelefoner</span>
+                    </a>
+                    <a href="nätverk.html" class="category-item">
+                        <span class="category-name">Nätverk</span>
+                    </a>
+                    <a href="robotdammsugare.html" class="category-item">
+                        <span class="category-name">Robotdammsugare</span>
+                    </a>
+                    <a href="smart-hem.html" class="category-item">
+                        <span class="category-name">Smart Hem</span>
+                    </a>
+                    <a href="tablets.html" class="category-item">
+                        <span class="category-name">Tablets</span>
+                    </a>
+                    <a href="traningsklockor.html" class="category-item">
+                        <span class="category-name">Träningsklockor</span>
+                    </a>
+                    <a href="tvattmaskiner.html" class="category-item">
+                        <span class="category-name">Tvättmaskiner</span>
+                    </a>
+                    <a href="torktumlare.html" class="category-item">
+                        <span class="category-name">Torktumlare</span>
+                    </a>
+                    <a href="vitvaror.html" class="category-item">
+                        <span class="category-name">Vitvaror</span>
+                    </a>
+                    <a href="wearables.html" class="category-item">
+                        <span class="category-name">Wearables</span>
+                    </a>
                 </div>
             </div>
         </div>
