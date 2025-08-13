@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EV6QGXHNGK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EV6QGXHNGK');
-</script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prylval – Bästa prylarna: jämförelser, tester & topplistor</title>
@@ -19,7 +11,7 @@
     <meta property="og:title" content="Prylval.se – Bästa prylarna: jämförelser, tester & topplistor">
     <meta property="og:description" content="Prylval hjälper dig hitta rätt pryl med tydliga jämförelser, tester och topplistor. Sakligt, enkelt och uppdaterat.">
     <meta property="og:url" content="https://www.prylval.se">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Prylval">
+    <meta property="og:image" content="https://www.prylval.se/media/prylnils.png">
     <meta property="og:type" content="website">
     
     <!-- Canonical -->
@@ -395,6 +387,7 @@
             min-height: 80px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            gap: 1rem;
         }
         
         .category-item::before {
@@ -421,11 +414,39 @@
             transform: scaleX(1);
         }
         
+        .category-image {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid #f1f5f9;
+        }
+        
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .category-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
         .category-name {
             font-size: 1.1rem;
             font-weight: 700;
             position: relative;
             z-index: 1;
+            margin-bottom: 0.25rem;
+        }
+        
+        .category-description {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #64748b;
+            line-height: 1.4;
         }
         
         .category-item::after {
@@ -839,6 +860,317 @@
             outline-offset: 2px;
         }
         
+        /* Affiliate disclosure */
+        .disclosure { 
+            margin: .5rem 0 0; 
+            font-size: .9rem; 
+            color: #64748b; 
+            display: flex; 
+            gap: .5rem; 
+            align-items: center; 
+        }
+        
+        .disclosure .info { 
+            font-weight: 600; 
+            opacity: .8; 
+        }
+        
+        .disclosure a { 
+            color: #475569; 
+            text-decoration: underline; 
+        }
+        
+        .ad-chip { 
+            display: inline-block; 
+            margin-left: .5rem; 
+            font-size: .7rem; 
+            background: #eef2f7; 
+            color: #475569; 
+            border-radius: 8px; 
+            padding: .1rem .4rem; 
+            vertical-align: middle; 
+        }
+        
+        @media (max-width: 768px) { 
+            .disclosure {
+                justify-content: center;
+                text-align: center;
+            } 
+        }
+        
+        /* Responsiv design för cookie popup */
+        @media (max-width: 768px) {
+            .cookie-banner {
+                padding: 1rem;
+            }
+            
+            .cookie-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .cookie-buttons {
+                flex-direction: column !important;
+                gap: 1rem !important;
+            }
+            
+            .cookie-buttons .btn {
+                min-width: 100% !important;
+                max-width: none !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cookie-content {
+                padding: 1.5rem;
+                margin: 0.5rem;
+            }
+            
+            .cookie-text h3 {
+                font-size: 1.3rem;
+            }
+            
+            .cookie-text p {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Cookie Popup */
+        .cookie-banner {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: rgba(0, 0, 0, 0.6) !important;
+            backdrop-filter: blur(8px) !important;
+            z-index: 9999 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 2rem !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            box-sizing: border-box !important;
+            transition: opacity 0.3s ease, visibility 0.3s ease !important;
+        }
+        
+        /* Dold popup */
+        .cookie-banner[style*="display: none"],
+        .cookie-banner[style*="visibility: hidden"] {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+        
+        .cookie-content {
+            background: white !important;
+            border-radius: 20px !important;
+            padding: 3rem !important;
+            max-width: 600px !important;
+            width: 90% !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25) !important;
+            text-align: center !important;
+            position: relative !important;
+            animation: cookiePopupSlideIn 0.4s ease-out !important;
+            margin: auto !important;
+            transform: none !important;
+        }
+        
+        @keyframes cookiePopupSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .cookie-text h3 {
+            margin-bottom: 1rem;
+            color: #1e293b;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .cookie-text p {
+            color: #64748b;
+            font-size: 1rem;
+            margin: 0 0 2rem 0;
+            line-height: 1.6;
+        }
+        
+        .cookie-buttons {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 1rem !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            position: relative !important;
+        }
+        
+        .cookie-buttons .btn {
+            padding: 1rem 2rem !important;
+            font-size: 1rem !important;
+            white-space: nowrap !important;
+            flex: 0 1 auto !important;
+            min-width: 160px !important;
+            max-width: none !important;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 1 !important;
+            border-radius: 12px !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+            border: none !important;
+        }
+        
+        .cookie-buttons .btn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
+        }
+        
+        /* Säkerställ att alla knappar syns */
+        #accept-necessary-cookies,
+        #reject-cookies {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+        
+        /* Professionell färgsättning */
+        #accept-all-cookies {
+            background: linear-gradient(135deg, #3b82f6, #2563eb) !important;
+            color: white !important;
+        }
+        
+        #accept-necessary-cookies {
+            background: linear-gradient(135deg, #64748b, #475569) !important;
+            color: white !important;
+        }
+        
+        #reject-cookies {
+            background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+            color: white !important;
+        }
+        
+        /* Cookie Settings Modal */
+        .cookie-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cookie-modal.active {
+            display: flex;
+        }
+        
+        .cookie-modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .cookie-modal h2 {
+            margin-bottom: 1.5rem;
+            color: #1e293b;
+        }
+        
+        .cookie-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .cookie-option:last-child {
+            border-bottom: none;
+        }
+        
+        .cookie-option-info h4 {
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        
+        .cookie-option-info p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .cookie-toggle {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background: #cbd5e1;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .cookie-toggle.active {
+            background: #475569;
+        }
+        
+        .cookie-toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        
+        .cookie-toggle.active::after {
+            transform: translateX(26px);
+        }
+        
+        .cookie-modal-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+        
+        /* Responsive cookie banner */
+        @media (max-width: 768px) {
+            .cookie-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .cookie-buttons {
+                justify-content: center;
+            }
+            
+            .cookie-buttons .btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+        
         /* Smooth scroll */
         html {
             scroll-behavior: smooth;
@@ -846,8 +1178,29 @@
     </style>
 </head>
 <body>
+
+    
     <a id="top"></a>
     <a href="#main-content" class="skip-link">Hoppa till innehåll</a>
+    
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="container">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <h3>Vi använder cookies</h3>
+                    <p>Vi använder cookies för att förbättra din upplevelse på Prylval.se. Genom att fortsätta använda webbplatsen godkänner du vår användning av cookies.</p>
+                </div>
+                <div class="cookie-buttons">
+                    <button id="accept-all-cookies" class="btn btn-primary" style="display: block !important; visibility: visible !important;">Acceptera alla cookies</button>
+                    <button id="accept-necessary-cookies" class="btn btn-secondary" style="display: block !important; visibility: visible !important;">Endast nödvändiga</button>
+                    <button id="reject-cookies" class="btn btn-secondary" style="display: block !important; visibility: visible !important;">Avvisa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
     
     <header>
         <div class="container">
@@ -860,7 +1213,7 @@
                 <nav>
                     <ul>
                         <li><a href="#top">Hem</a></li>
-                        <li><a href="#senaste-tester">Senaste Tester</a></li>
+                        <li><a href="#senaste-jamforelser">Senaste produktjämförelser</a></li>
                         <li><a href="#topplistan">Topplistan</a></li>
                         <li><a href="#kategorier">Kategorier</a></li>
                         <li><a href="#om-prylval">Om Prylval</a></li>
@@ -871,7 +1224,13 @@
         </div>
     </header>
 
-
+    <!-- Diskret affiliate-disclosure -->
+    <div class="disclosure" role="note" aria-live="polite">
+        <div class="container">
+            <span class="info">ℹ︎</span>
+            <span>Denna sida innehåller annonslänkar. <a href="/om-affiliatelankar.html" title="Så fungerar våra annonslänkar">Läs mer</a></span>
+        </div>
+    </div>
 
     <main id="main-content">
         <section id="hero" class="hero">
@@ -879,7 +1238,7 @@
                 <h1>Hitta rätt pryl – varje gång</h1>
                 <p>Prylval hjälper dig navigera i den överväldigande mängden produkter på marknaden. Vi testar, jämför och rankar så du slipper göra det. Våra rekommendationer bygger på sakliga tester, tydliga jämförelser och löpande uppdateringar.</p>
                 <div class="hero-buttons">
-                    <a href="#tester" class="btn btn-primary">Läs senaste testet</a>
+                    <a href="#senaste-jamforelser" class="btn btn-primary">Läs senaste jämförelsen</a>
                     <a href="#kontakt" class="btn btn-secondary">Kontakta oss</a>
                 </div>
             </div>
@@ -907,145 +1266,135 @@
             </div>
         </section>
 
-        <section id="senaste-tester" class="cards-section">
+        <section id="senaste-jamforelser" class="cards-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Senaste tester</h2>
+                    <h2>Senaste jämförelser</h2>
                     <p>Upptäck våra senaste produktjämförelser och rekommendationer</p>
                 </div>
-                <div class="cards-grid">
+                <div class="cards-grid" id="senaste-jamforelser-grid">
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Robotdammsugare" alt="Robotdammsugare som arbetar på golvet">
+                        <picture>
+                            <source srcset="/media/products/robot-irobot-roomba-j7-plus.avif" type="image/avif">
+                            <img src="/media/products/robot-irobot-roomba-j7-plus.avif" alt="Robotdammsugare jämförelse" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
-                            <h3>Bästa robotdammsugaren 2025 – topp 7</h3>
-                            <p>Vi har testat årets bästa robotdammsugare för olika behov och budgetar. Från grundläggande städning till premium-smart hem.</p>
+                            <h3>Robotdammsugare 2025</h3>
+                            <p>Jämför årets bästa robotdammsugare: iRobot Roomba j7+, Roborock S8 och Dreame L10s Ultra. Hitta den perfekta robotdammsugaren för ditt hem.</p>
                             <ul class="card-features">
-                                <li>Suction power upp till 4000 Pa</li>
-                                <li>Smart kartläggning och navigering</li>
-                                <li>Lång batteritid och tyst drift</li>
+                                <li>3 toppmodeller jämförda</li>
+                                <li>Pris, funktioner och prestanda</li>
+                                <li>Vinnare och rekommendationer</li>
+                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Senast uppdaterad: januari 2025</span>
-                                <a href="robotdammsugare.html" class="card-btn">Läs guiden</a>
+                                <span>Robotdammsugare</span>
+                                <a href="robotdammsugare.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
                     </article>
 
                     <article class="card">
-                        <img src="https://placeholder.com/400x200.png?text=Träningsklocka" alt="Träningsklocka med fitness-tracking">
+                        <picture>
+                            <source srcset="/media/products/apple-watch-series-9.avif" type="image/avif">
+                            <img src="/media/products/apple-watch-series-9.avif" alt="Träningsklockor jämförelse" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
-                            <h3>Bästa träningsklockan 2025 – för iPhone & Android</h3>
-                            <p>Komplett guide till årets bästa träningsklockor. Vi jämför funktioner, kompatibilitet och pris för olika aktivitetsnivåer.</p>
+                            <h3>Träningsklockor 2025</h3>
+                            <p>Jämför Apple Watch Series 9, Garmin Forerunner 265 och Samsung Galaxy Watch6. Hitta den perfekta träningsklockan för dina behov.</p>
                             <ul class="card-features">
-                                <li>GPS och hjärtfrekvensmätning</li>
-                                <li>Lång batteritid och vattentät</li>
-                                <li>Smartphone-integration</li>
+                                <li>3 premium-modeller jämförda</li>
+                                <li>Fitness-funktioner och batteritid</li>
+                                <li>iPhone vs Android-kompatibilitet</li>
+                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Senast uppdaterad: januari 2025</span>
-                                <a href="traningsklockor.html" class="card-btn">Läs guiden</a>
+                                <span>Träningsklockor</span>
+                                <a href="traningsklockor.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Hörlurar" alt="Brusreducerande hörlurar">
+                        <picture>
+                            <source srcset="/media/products/sony-wh-1000xm5.avif" type="image/avif">
+                            <img src="/media/products/sony-wh-1000xm5.avif" alt="Hörlurar jämförelse" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
-                            <h3>Bästa brusreducerande hörlurar – pendling & kontor</h3>
-                            <p>Perfekta hörlurar för att blockera omgivningsljud. Vi testar ANC-teknik, komfort och ljudkvalitet för olika användningsområden.</p>
+                            <h3>Brusreducerande hörlurar 2025</h3>
+                            <p>Jämför Sony WH-1000XM5, Bose QuietComfort Ultra och Apple AirPods Max. Hitta världens bästa ANC-hörlurar för dina behov.</p>
                             <ul class="card-features">
-                                <li>Adaptiv brusreducering</li>
-                                <li>Lång batteritid och snabb laddning</li>
-                                <li>Komfortabel design för långvarig användning</li>
+                                <li>3 världsledande modeller</li>
+                                <li>ANC-kvalitet och ljud</li>
+                                <li>Batteritid och komfort</li>
+                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Senast uppdaterad: januari 2025</span>
-                                <a href="horlurar-anc.html" class="card-btn">Läs guiden</a>
+                                <span>Hörlurar</span>
+                                <a href="horlurar-anc.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Mesh+WiFi" alt="Mesh WiFi-system för hem">
+                        <picture>
+                            <source srcset="/media/products/mesh-tp-link-deco-xe75.avif" type="image/avif">
+                            <img src="/media/products/mesh-tp-link-deco-xe75.avif" alt="Mesh WiFi jämförelse" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
-                            <h3>Bästa mesh-WiFi för villa</h3>
-                            <p>Lösningar för att få snabb och stabil internetuppkoppling i hela huset. Vi jämför täckning, hastighet och enkelhet.</p>
+                            <h3>Mesh WiFi 2025</h3>
+                            <p>Jämför TP-Link Deco XE75, ASUS ZenWiFi XT8 och Netgear Orbi RBK752. Hitta det perfekta mesh WiFi-systemet för ditt hem.</p>
                             <ul class="card-features">
-                                <li>Fullständig täckning i hela huset</li>
-                                <li>Enkel installation och hantering</li>
-                                <li>Snabb och stabil anslutning</li>
+                                <li>3 WiFi 6-system jämförda</li>
+                                <li>Prestanda och täckning</li>
+                                <li>Installation och funktioner</li>
+                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Senast uppdaterad: januari 2025</span>
-                                <a href="mesh-wifi.html" class="card-btn">Läs guiden</a>
+                                <span>Mesh WiFi</span>
+                                <a href="mesh-wifi.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Airfryer" alt="Airfryer för fritering utan olja">
+                        <picture>
+                            <source srcset="/media/products/ninja-foodi-max.avif" type="image/avif">
+                            <img src="/media/products/ninja-foodi-max.avif" alt="Airfryers jämförelse" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
-                            <h3>Bästa airfryer 2025</h3>
-                            <p>Gör krispiga rätter med minimalt med olja. Vi testar kapacitet, funktioner och resultat för olika maträtter.</p>
+                            <h3>Airfryers 2025</h3>
+                            <p>Jämför Ninja Foodi MAX, Philips Airfryer XXL och Cosori Air Fryer. Hitta den perfekta airfryern för din familj.</p>
                             <ul class="card-features">
-                                <li>Stor kapacitet för familjer</li>
-                                <li>Flera koksätt och temperaturer</li>
-                                <li>Enkel rengöring och underhåll</li>
+                                <li>3 populära modeller jämförda</li>
+                                <li>Kapacitet och koksätt</li>
+                                <li>Pris och kvalitet</li>
+                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Senast uppdaterad: januari 2025</span>
-                                <a href="airfryers.html" class="card-btn">Läs guiden</a>
+                                <span>Airfryers</span>
+                                <a href="airfryers.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Webbkamera" alt="Webbkamera för möten och streaming">
+                        <picture>
+                            <source srcset="/media/products/samsung-dv90t5240ae.avif" type="image/avif">
+                            <img src="/media/products/samsung-dv90t5240ae.avif" alt="Torktumlare jämförelse" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
-                            <h3>Bästa webbkamera för möten & streaming</h3>
-                            <p>Professionell bildkvalitet för distansarbete och streaming. Vi jämför upplösning, ljudkvalitet och kompatibilitet.</p>
+                            <h3>Torktumlare 2025</h3>
+                            <p>Jämför Bosch Serie 6, Samsung DV90T5240AE och Electrolux EW8H869B. Hitta den perfekta torktumlaren för dina behov.</p>
                             <ul class="card-features">
-                                <li>4K upplösning och autofokus</li>
-                                <li>Inbyggd mikrofon med brusreducering</li>
-                                <li>Universal kompatibilitet</li>
+                                <li>3 energisnåla modeller</li>
+                                <li>Kapacitet och funktioner</li>
+                                <li>Pris och energiklass</li>
+                                <li>Uppdaterad 2025</li>
                             </ul>
                             <div class="card-footer">
-                                <span>Senast uppdaterad: januari 2025</span>
-                                <a href="robotdammsugare.html" class="card-btn">Läs guiden</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Torktumlare" alt="Torktumlare för effektiv tvättvård">
-                        <div class="card-content">
-                            <h3>Bästa torktumlaren 2025</h3>
-                            <p>Hitta rätt torktumlare för din familj. Vi jämför kapacitet, energiklass och funktioner för olika behov.</p>
-                            <ul class="card-features">
-                                <li>Stor kapacitet för familjer</li>
-                                <li>Energisnåla alternativ</li>
-                                <li>Smart funktioner och program</li>
-                            </ul>
-                            <div class="card-footer">
-                                <span>Senast uppdaterad: januari 2025</span>
-                                <a href="torktumlare.html" class="card-btn">Läs guiden</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Tvättmaskin" alt="Tvättmaskin med moderna funktioner">
-                        <div class="card-content">
-                            <h3>Bästa tvättmaskinen 2025</h3>
-                            <p>Välj rätt tvättmaskin för dina behov. Vi jämför kapacitet, energiklass och funktioner för olika familjestorlekar.</p>
-                            <ul class="card-features">
-                                <li>Stor kapacitet för familjer</li>
-                                <li>Energisnåla alternativ</li>
-                                <li>Smart funktioner och program</li>
-                            </ul>
-                            <div class="card-footer">
-                                <span>Senast uppdaterad: januari 2025</span>
-                                <a href="tvattmaskiner.html" class="card-btn">Läs guiden</a>
+                                <span>Torktumlare</span>
+                                <a href="torktumlare.html" class="card-btn">Läs jämförelsen</a>
                             </div>
                         </div>
                     </article>
@@ -1061,7 +1410,10 @@
                 </div>
                 <div class="cards-grid">
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Robotdammsugare" alt="Robotdammsugare som arbetar på golvet">
+                        <picture>
+                            <source srcset="/media/products/robot-irobot-roomba-j7-plus.avif" type="image/avif">
+                            <img src="/media/products/robot-irobot-roomba-j7-plus.avif" alt="iRobot Roomba j7+ robotdammsugare" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
                             <h3>Robotdammsugare</h3>
                             <p>Smart städning för det moderna hemmet med kartläggning och navigering.</p>
@@ -1072,7 +1424,10 @@
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Träningsklocka" alt="Träningsklocka med fitness-tracking">
+                        <picture>
+                            <source srcset="/media/products/apple-watch-series-9.avif" type="image/avif">
+                            <img src="/media/products/apple-watch-series-9.avif" alt="Apple Watch Series 9 träningsklocka" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
                             <h3>Träningsklockor</h3>
                             <p>Fitness-tracking och hälsövervakning för iPhone och Android.</p>
@@ -1083,7 +1438,10 @@
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Hörlurar" alt="Brusreducerande hörlurar">
+                        <picture>
+                            <source srcset="/media/products/sony-wh-1000xm5.avif" type="image/avif">
+                            <img src="/media/products/sony-wh-1000xm5.avif" alt="Sony WH-1000XM5 brusreducerande hörlurar" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
                             <h3>Brusreducerande hörlurar</h3>
                             <p>Perfekta för pendling och kontor med ANC-teknik.</p>
@@ -1094,7 +1452,10 @@
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Mesh+WiFi" alt="Mesh WiFi-system för hem">
+                        <picture>
+                            <source srcset="/media/products/mesh-tp-link-deco-xe75.avif" type="image/avif">
+                            <img src="/media/products/mesh-tp-link-deco-xe75.avif" alt="TP-Link Deco XE75 mesh WiFi-system" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
                             <h3>Mesh WiFi</h3>
                             <p>Snabb och stabil internetuppkoppling i hela huset.</p>
@@ -1105,7 +1466,10 @@
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Airfryer" alt="Airfryer för fritering utan olja">
+                        <picture>
+                            <source srcset="/media/products/ninja-foodi-max.avif" type="image/avif">
+                            <img src="/media/products/ninja-foodi-max.avif" alt="Ninja Foodi MAX airfryer" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
                             <h3>Airfryers</h3>
                             <p>Krispiga rätter med minimalt med olja för hela familjen.</p>
@@ -1116,7 +1480,10 @@
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Torktumlare" alt="Torktumlare för effektiv tvättvård">
+                        <picture>
+                            <source srcset="/media/products/samsung-dv90t5240ae.avif" type="image/avif">
+                            <img src="/media/products/samsung-dv90t5240ae.avif" alt="Samsung DV90T5240AE torktumlare" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
                             <h3>Torktumlare</h3>
                             <p>Effektiv tvättvård med energisnåla alternativ.</p>
@@ -1127,7 +1494,10 @@
                     </article>
 
                     <article class="card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Tvättmaskin" alt="Tvättmaskin med moderna funktioner">
+                        <picture>
+                            <source srcset="/media/products/lg-f4wv710p2e.avif" type="image/avif">
+                            <img src="/media/products/lg-f4wv710p2e.avif" alt="LG F4WV710P2E tvättmaskin" width="400" height="200" loading="lazy" decoding="async">
+                        </picture>
                         <div class="card-content">
                             <h3>Tvättmaskiner</h3>
                             <p>Moderna tvättmaskiner för olika familjestorlekar.</p>
@@ -1151,60 +1521,109 @@
                         </a>
                     </div>
                 </div>
-                <div class="categories-grid">
-                    <a href="airfryers.html" class="category-item">
-                        <span class="category-name">Airfryers</span>
-                    </a>
-                    <a href="dammsugare.html" class="category-item">
-                        <span class="category-name">Dammsugare</span>
-                    </a>
-                    <a href="datorer.html" class="category-item">
-                        <span class="category-name">Datorer</span>
-                    </a>
-                    <a href="gaming.html" class="category-item">
-                        <span class="category-name">Gaming</span>
-                    </a>
-                    <a href="horlurar.html" class="category-item">
-                        <span class="category-name">Hörlurar</span>
-                    </a>
-                    <a href="kameror.html" class="category-item">
-                        <span class="category-name">Kameror</span>
-                    </a>
-                    <a href="koksapparater.html" class="category-item">
-                        <span class="category-name">Köksapparater</span>
-                    </a>
-                    <a href="ljud-bild.html" class="category-item">
-                        <span class="category-name">Ljud & Bild</span>
-                    </a>
-                    <a href="mobiltelefoner.html" class="category-item">
-                        <span class="category-name">Mobiltelefoner</span>
-                    </a>
-                    <a href="nätverk.html" class="category-item">
-                        <span class="category-name">Nätverk</span>
-                    </a>
+                <div class="categories-grid" id="kategorier-grid">
                     <a href="robotdammsugare.html" class="category-item">
-                        <span class="category-name">Robotdammsugare</span>
+                        <div class="category-image">
+                            <picture>
+                                <source srcset="/media/products/robot-irobot-roomba-j7-plus.avif" type="image/avif">
+                                <img src="/media/products/robot-irobot-roomba-j7-plus.avif" alt="Robotdammsugare" width="60" height="60" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="category-info">
+                            <div class="category-name">Robotdammsugare</div>
+                            <div class="category-description">Smart städning för moderna hem</div>
+                        </div>
                     </a>
-                    <a href="smart-hem.html" class="category-item">
-                        <span class="category-name">Smart Hem</span>
-                    </a>
-                    <a href="tablets.html" class="category-item">
-                        <span class="category-name">Tablets</span>
-                    </a>
+
                     <a href="traningsklockor.html" class="category-item">
-                        <span class="category-name">Träningsklockor</span>
+                        <div class="category-image">
+                            <picture>
+                                <source srcset="/media/products/apple-watch-series-9.avif" type="image/avif">
+                                <img src="/media/products/apple-watch-series-9.avif" alt="Träningsklockor" width="60" height="60" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="category-info">
+                            <div class="category-name">Träningsklockor</div>
+                            <div class="category-description">Fitness-tracking och hälsöövervakning</div>
+                        </div>
                     </a>
-                    <a href="tvattmaskiner.html" class="category-item">
-                        <span class="category-name">Tvättmaskiner</span>
+
+                    <a href="horlurar-anc.html" class="category-item">
+                        <div class="category-image">
+                            <picture>
+                                <source srcset="/media/products/sony-wh-1000xm5.avif" type="image/avif">
+                                <img src="/media/products/sony-wh-1000xm5.avif" alt="Hörlurar" width="60" height="60" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="category-info">
+                            <div class="category-name">Hörlurar</div>
+                            <div class="category-description">Brusreducerande hörlurar med ANC</div>
+                        </div>
                     </a>
+
+                    <a href="mesh-wifi.html" class="category-item">
+                        <div class="category-image">
+                            <picture>
+                                <source srcset="/media/products/mesh-tp-link-deco-xe75.avif" type="image/avif">
+                                <img src="/media/products/mesh-tp-link-deco-xe75.avif" alt="Mesh WiFi" width="60" height="60" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="category-info">
+                            <div class="category-name">Mesh WiFi</div>
+                            <div class="category-description">Snabb internetuppkoppling i hela huset</div>
+                        </div>
+                    </a>
+
+                    <a href="airfryers.html" class="category-item">
+                        <div class="category-image">
+                            <picture>
+                                <source srcset="/media/products/ninja-foodi-max.avif" type="image/avif">
+                                <img src="/media/products/ninja-foodi-max.avif" alt="Airfryers" width="60" height="60" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="category-info">
+                            <div class="category-name">Airfryers</div>
+                            <div class="category-description">Krispiga rätter med minimalt med olja</div>
+                        </div>
+                    </a>
+
                     <a href="torktumlare.html" class="category-item">
-                        <span class="category-name">Torktumlare</span>
+                        <div class="category-image">
+                            <picture>
+                                <source srcset="/media/products/samsung-dv90t5240ae.avif" type="image/avif">
+                                <img src="/media/products/samsung-dv90t5240ae.avif" alt="Torktumlare" width="60" height="60" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="category-info">
+                            <div class="category-name">Torktumlare</div>
+                            <div class="category-description">Effektiv tvättvård med energisnåla alternativ</div>
+                        </div>
                     </a>
-                    <a href="vitvaror.html" class="category-item">
-                        <span class="category-name">Vitvaror</span>
+
+                    <a href="tvattmaskiner.html" class="category-item">
+                        <div class="category-image">
+                            <picture>
+                                <source srcset="/media/products/lg-f4wv710p2e.avif" type="image/avif">
+                                <img src="/media/products/lg-f4wv710p2e.avif" alt="Tvättmaskiner" width="60" height="60" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="category-info">
+                            <div class="category-name">Tvättmaskiner</div>
+                            <div class="category-description">Moderna tvättmaskiner för olika familjestorlekar</div>
+                        </div>
                     </a>
-                    <a href="wearables.html" class="category-item">
-                        <span class="category-name">Wearables</span>
+
+                    <a href="dammsugare.html" class="category-item">
+                        <div class="category-image">
+                            <picture>
+                                <source srcset="/media/products/dyson-v15-detect.avif" type="image/avif">
+                                <img src="/media/products/dyson-v15-detect.avif" alt="Dammsugare" width="60" height="60" loading="lazy" decoding="async">
+                            </picture>
+                        </div>
+                        <div class="category-info">
+                            <div class="category-name">Dammsugare</div>
+                            <div class="category-description">Kraftfulla dammsugare för alla golvtyper</div>
+                        </div>
                     </a>
                 </div>
             </div>
@@ -1266,6 +1685,8 @@
                     <a href="integritetspolicy.html">Integritetspolicy</a>
                     <a href="anvandarvillkor.html">Användarvillkor</a>
                     <a href="cookies.html">Cookies</a>
+                    <a href="#" id="cookie-settings-link">Cookie-inställningar</a>
+                    <a href="/om-affiliatelankar.html">Info om annonslänkar</a>
                 </div>
                 <p>&copy; 2025 Prylval. Alla rättigheter förbehållna.</p>
                 <p>Priser kan komma att ändras. Vi ansvarar inte för eventuella fel i produktinformation.</p>
@@ -1273,6 +1694,48 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookie-modal" class="cookie-modal">
+        <div class="cookie-modal-content">
+            <h2>Cookie-inställningar</h2>
+            
+            <div class="cookie-option">
+                <div class="cookie-option-info">
+                    <h4>Nödvändiga cookies</h4>
+                    <p>Dessa cookies är nödvändiga för att webbplatsen ska fungera. De kan inte stängas av.</p>
+                </div>
+                <div class="cookie-toggle active" data-cookie="necessary">
+                    <input type="checkbox" checked disabled style="display: none;">
+                </div>
+            </div>
+            
+            <div class="cookie-option">
+                <div class="cookie-option-info">
+                    <h4>Analytics cookies</h4>
+                    <p>Hjälper oss att förstå hur besökare använder webbplatsen genom att samla in information anonymt.</p>
+                </div>
+                <div class="cookie-toggle" data-cookie="analytics">
+                    <input type="checkbox" style="display: none;">
+                </div>
+            </div>
+            
+            <div class="cookie-option">
+                <div class="cookie-option-info">
+                    <h4>Marketing cookies</h4>
+                    <p>Används för att spåra besökare på webbplatser för att visa relevanta annonser.</p>
+                </div>
+                <div class="cookie-toggle" data-cookie="marketing">
+                    <input type="checkbox" style="display: none;">
+                </div>
+            </div>
+            
+            <div class="cookie-modal-buttons">
+                <button id="save-cookie-settings" class="btn btn-primary">Spara inställningar</button>
+                <button id="close-cookie-modal" class="btn btn-secondary">Stäng</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Mobilmeny toggle
@@ -1309,75 +1772,106 @@
                 }
             });
         });
+        
+        // Markera affiliate-länkar
+        function markAffiliateLinks() {
+            const cardButtons = document.querySelectorAll('.card-btn, .card a[href^="http"]');
+            
+            cardButtons.forEach(button => {
+                try {
+                    const href = button.href;
+                    if (href && href.startsWith('http') && !href.includes('prylval.se')) {
+                        // Externa länkar - markera som affiliate
+                        button.rel = 'sponsored nofollow noopener';
+                        button.classList.add('is-affiliate');
+                        button.setAttribute('aria-label', 'Läs guiden (annonslänk till återförsäljare)');
+                        
+                        // Lägg till Annonslänk-chip om den inte redan finns
+                        if (!button.querySelector('.ad-chip')) {
+                            const adChip = document.createElement('span');
+                            adChip.className = 'ad-chip';
+                            adChip.textContent = 'Annonslänk';
+                            adChip.title = 'Klick leder till återförsäljare via annonslänk';
+                            button.appendChild(adChip);
+                        }
+                    }
+                } catch (error) {
+                    console.error('Fel vid markering av affiliate-länk:', error);
+                }
+            });
+        }
+        
+        // Kör markAffiliateLinks när DOM är redo
+        document.addEventListener('DOMContentLoaded', markAffiliateLinks);
     </script>
     <script>
 const allProducts = [
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        img: "/media/products/robot-irobot-roomba-j7-plus.avif", 
         title: "iRobot Roomba j7+", 
         link: "irobot-roomba-j7-plus.html", 
         text: "Smart robotdammsugare med AI-kartläggning och automatisk tömning.",
         category: "Robotdammsugare"
     },
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        img: "/media/products/apple-watch-series-9.avif", 
         title: "Apple Watch Series 9", 
         link: "apple-watch-series-9.html", 
         text: "Avancerad träningsklocka med S9-chip och förbättrad hjärtfrekvensmätning.",
         category: "Träningsklockor"
     },
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        img: "/media/products/sony-wh-1000xm5.avif", 
         title: "Sony WH-1000XM5", 
         link: "sony-wh-1000xm5.html", 
         text: "Världens bästa brusreducerande hörlurar med 30h batteritid.",
         category: "Hörlurar"
     },
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
-        title: "Google Nest Wifi Pro", 
+        img: "/media/products/mesh-tp-link-deco-xe75.avif", 
+        title: "TP-Link Deco XE75", 
         link: "google-nest-wifi-pro.html", 
         text: "Mesh WiFi-system för snabb och stabil uppkoppling i hela huset.",
         category: "Mesh WiFi"
     },
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        img: "/media/products/ninja-foodi-max.avif", 
         title: "Ninja Foodi MAX", 
         link: "ninja-foodi-max.html", 
         text: "Airfryer med stor kapacitet och flera koksätt för krispiga rätter.",
         category: "Airfryers"
     },
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        img: "/media/products/samsung-dv90t5240ae.avif", 
         title: "Samsung DV90T5240AE", 
         link: "samsung-dv90t5240ae.html", 
         text: "Energisnål torktumlare med smarta funktioner och stor kapacitet.",
         category: "Torktumlare"
     },
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
-        title: "LG F4WV510S", 
+        img: "/media/products/lg-f4wv710p2e.avif", 
+        title: "LG F4WV710P2E", 
         link: "lg-f4wv510s.html", 
         text: "Modern tvättmaskin med energiklass A och stor kapacitet.",
         category: "Tvättmaskiner"
     },
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
+        img: "/media/products/dyson-v15-detect.avif", 
         title: "Dyson V15 Detect", 
         link: "dyson-v15-detect.html", 
         text: "Kabeltrådlös dammsugare med laser-teknik för synlig damm.",
         category: "Robotdammsugare"
     },
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
-        title: "Garmin Fenix 7", 
+        img: "/media/products/garmin-forerunner-265.avif", 
+        title: "Garmin Forerunner 265", 
         link: "garmin-fenix-7.html", 
         text: "Premium multisport-klocka med GPS och lång batteritid.",
         category: "Träningsklockor"
     },
     { 
-        img: "https://via.placeholder.com/80x80.png?text=Produkt", 
-        title: "Bose QuietComfort 45", 
+        img: "/media/products/bose-quietcomfort-ultra.avif", 
+        title: "Bose QuietComfort Ultra", 
         link: "bose-quietcomfort-45.html", 
         text: "Bekväma hörlurar med världsledande brusreducering.",
         category: "Hörlurar"
@@ -1397,7 +1891,10 @@ function updateTopplistan() {
             <article class="card topplistan-card">
                 <div class="rank-number">${rank}</div>
                 <div class="product-image">
-                    <img src="${product.img}" alt="${product.title}">
+                    <picture>
+                        <source srcset="${product.img}" type="image/avif">
+                        <img src="${product.img.replace('.avif', '.jpg')}" alt="${product.title}" width="80" height="80" loading="lazy" decoding="async">
+                    </picture>
                 </div>
                 <div class="card-content">
                     <div class="product-category">${product.category}</div>
@@ -1415,8 +1912,418 @@ function updateTopplistan() {
 // Ladda vid start
 updateTopplistan();
 
-// Byt var 8:e timme (3 ggr/dygn)
-setInterval(updateTopplistan, 8 * 60 * 60 * 1000);
+        // Byt var 8:e timme (3 ggr/dygn)
+        setInterval(updateTopplistan, 8 * 60 * 60 * 1000);
+    </script>
+
+    <script>
+        // Cookie Management System
+        class CookieManager {
+            constructor() {
+                this.cookieConsent = this.getCookieConsent();
+                this.init();
+            }
+            
+            init() {
+                // Event listeners
+                this.setupEventListeners();
+                
+                // Visa cookie banner om inget samtycke finns
+                if (!this.cookieConsent) {
+                    this.showCookieBanner();
+                }
+            }
+            
+            setupEventListeners() {
+                // Cookie banner buttons
+                const acceptAllBtn = document.getElementById('accept-all-cookies');
+                const acceptNecessaryBtn = document.getElementById('accept-necessary-cookies');
+                const rejectBtn = document.getElementById('reject-cookies');
+                
+                console.log('Hittade knappar:', {
+                    acceptAll: acceptAllBtn,
+                    acceptNecessary: acceptNecessaryBtn,
+                    reject: rejectBtn
+                });
+                
+                if (acceptAllBtn) {
+                    acceptAllBtn.addEventListener('click', () => {
+                        console.log('Acceptera alla cookies klickad');
+                        this.acceptAllCookies();
+                    });
+                } else {
+                    console.error('accept-all-cookies knapp hittades inte');
+                }
+                
+                if (acceptNecessaryBtn) {
+                    acceptNecessaryBtn.addEventListener('click', () => {
+                        console.log('Endast nödvändiga cookies klickad');
+                        this.acceptNecessaryCookies();
+                    });
+                } else {
+                    console.error('accept-necessary-cookies knapp hittades inte');
+                }
+                
+                if (rejectBtn) {
+                    rejectBtn.addEventListener('click', () => {
+                        console.log('Avvisa cookies klickad');
+                        this.rejectCookies();
+                    });
+                } else {
+                    console.error('reject-cookies knapp hittades inte');
+                }
+                
+                // Cookie settings modal
+                document.getElementById('cookie-settings-link')?.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    this.showCookieModal();
+                });
+                
+                document.getElementById('close-cookie-modal')?.addEventListener('click', () => {
+                    this.hideCookieModal();
+                });
+                
+                document.getElementById('save-cookie-settings')?.addEventListener('click', () => {
+                    this.saveCookieSettings();
+                });
+                
+                // Cookie toggle switches
+                document.querySelectorAll('.cookie-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', () => {
+                        this.toggleCookieOption(toggle);
+                    });
+                });
+            }
+            
+            showCookieBanner() {
+                const banner = document.getElementById('cookie-banner');
+                if (banner) {
+                    banner.style.display = 'block';
+                    console.log('Cookie banner visas');
+                } else {
+                    console.error('Cookie banner hittades inte');
+                }
+            }
+            
+            hideCookieBanner() {
+                const banner = document.getElementById('cookie-banner');
+                if (banner) {
+                    banner.style.display = 'none';
+                    banner.style.visibility = 'hidden';
+                    banner.style.opacity = '0';
+                    banner.style.pointerEvents = 'none';
+                    console.log('Cookie banner dold');
+                } else {
+                    console.error('Cookie banner hittades inte vid döljning');
+                }
+            }
+            
+            showCookieModal() {
+                const modal = document.getElementById('cookie-modal');
+                if (modal) {
+                    modal.classList.add('active');
+                    this.loadCurrentSettings();
+                }
+            }
+            
+            hideCookieModal() {
+                const modal = document.getElementById('cookie-modal');
+                if (modal) {
+                    modal.classList.remove('active');
+                }
+            }
+            
+            acceptAllCookies() {
+                this.cookieConsent = {
+                    necessary: true,
+                    analytics: true,
+                    marketing: true,
+                    timestamp: Date.now()
+                };
+                this.saveCookieConsent();
+                this.hideCookieBanner();
+                this.loadAnalytics();
+            }
+            
+            acceptNecessaryCookies() {
+                this.cookieConsent = {
+                    necessary: true,
+                    analytics: false,
+                    marketing: false,
+                    timestamp: Date.now()
+                };
+                this.saveCookieConsent();
+                this.hideCookieBanner();
+            }
+            
+            rejectCookies() {
+                this.cookieConsent = {
+                    necessary: true,
+                    analytics: false,
+                    marketing: false,
+                    timestamp: Date.now()
+                };
+                this.saveCookieConsent();
+                this.hideCookieBanner();
+            }
+            
+            toggleCookieOption(toggle) {
+                toggle.classList.toggle('active');
+            }
+            
+            loadCurrentSettings() {
+                if (this.cookieConsent) {
+                    document.querySelectorAll('.cookie-toggle').forEach(toggle => {
+                        const cookieType = toggle.dataset.cookie;
+                        if (cookieType === 'necessary') return; // Kan inte ändras
+                        
+                        if (this.cookieConsent[cookieType]) {
+                            toggle.classList.add('active');
+                        } else {
+                            toggle.classList.remove('active');
+                        }
+                    });
+                }
+            }
+            
+            saveCookieSettings() {
+                const newConsent = {
+                    necessary: true,
+                    analytics: document.querySelector('[data-cookie="analytics"]').classList.contains('active'),
+                    marketing: document.querySelector('[data-cookie="marketing"]').classList.contains('active'),
+                    timestamp: Date.now()
+                };
+                
+                this.cookieConsent = newConsent;
+                this.saveCookieConsent();
+                this.hideCookieModal();
+                
+                // Ladda analytics om det är aktiverat
+                if (newConsent.analytics) {
+                    this.loadAnalytics();
+                }
+            }
+            
+            getCookieConsent() {
+                const consent = localStorage.getItem('prylval-cookie-consent');
+                return consent ? JSON.parse(consent) : null;
+            }
+            
+            saveCookieConsent() {
+                localStorage.setItem('prylval-cookie-consent', JSON.stringify(this.cookieConsent));
+            }
+            
+            loadAnalytics() {
+                // Ladda Google Analytics om funktionen finns
+                if (typeof window.injectGA === 'function') {
+                    window.injectGA();
+                } else {
+                    console.log('Analytics cookies aktiverade - GA kommer laddas vid nästa sidladdning');
+                }
+            }
+        }
+        
+        // Initiera cookie manager när sidan laddas
+        document.addEventListener('DOMContentLoaded', () => {
+            const cookieManager = new CookieManager();
+            
+
+        });
+    </script>
+    
+    <!-- Affiliate Management & Google Analytics Script -->
+    <script>
+        // Affiliate-konfiguration - uppdatera enkelt här
+        const AFFILIATE_CONFIG = {
+            // Adtraction tracking-ID:n
+            adtraction: {
+                accountId: 'XXXXXX', // Ersätt med ditt konto-ID
+                siteId: 'YYYYYY'     // Ersätt med ditt site-ID
+            },
+            // Godkända butiker som ska konverteras till affiliate-länkar
+            approvedStores: [
+                'komplett.se',
+                'elon.se', 
+                'netonnet.se',
+                'cdondirect.com',
+                'mediamarkt.se',
+                'webhallen.se',
+                'inet.se',
+                'dustinhome.se',
+                'amazon.se',
+                'amazon.com',
+                'amazon.de',
+                'amazon.co.uk'
+            ],
+            // Affiliate-domäner som redan är konverterade
+            affiliateDomains: [
+                'track.adtraction.com',
+                'adtraction.com',
+                'partner.adtraction.com'
+            ]
+        };
+        
+        // Google Analytics injection-funktion
+        function injectGA() {
+            if (typeof gtag === 'undefined') {
+                // Ladda GA-scriptet
+                const script = document.createElement('script');
+                script.async = true;
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-EV6QGXHNGK';
+                document.head.appendChild(script);
+                
+                script.onload = function() {
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    window.gtag = gtag;
+                    gtag('js', new Date());
+                    gtag('config', 'G-EV6QGXHNGK');
+                    console.log('Google Analytics laddat');
+                };
+            } else {
+                console.log('Google Analytics redan laddat');
+            }
+        }
+        
+        // Funktion för att konvertera vanliga länkar till affiliate-länkar
+        function convertToAffiliateLink(link) {
+            try {
+                const url = new URL(link.href);
+                const hostname = url.hostname.toLowerCase();
+                
+                // Kontrollera om länken redan är en affiliate-länk
+                if (AFFILIATE_CONFIG.affiliateDomains.some(domain => hostname.includes(domain))) {
+                    return; // Länken är redan konverterad
+                }
+                
+                // Kontrollera om det är en godkänd butik
+                const isApprovedStore = AFFILIATE_CONFIG.approvedStores.some(store => 
+                    hostname.includes(store.replace('.se', '').replace('.com', '').replace('.de', '').replace('.co.uk', ''))
+                );
+                
+                if (isApprovedStore) {
+                    // Konvertera till Adtraction affiliate-länk
+                    const encodedUrl = encodeURIComponent(link.href);
+                    const affiliateUrl = `https://track.adtraction.com/t/t?a=${AFFILIATE_CONFIG.adtraction.accountId}&as=${AFFILIATE_CONFIG.adtraction.siteId}&url=${encodedUrl}`;
+                    
+                    // Uppdatera länken
+                    link.href = affiliateUrl;
+                    link.rel = 'sponsored noopener noreferrer';
+                    link.target = '_blank';
+                    
+                    // Lägg till UTM-parametrar
+                    const utmParams = new URLSearchParams();
+                    utmParams.set('epi', 'prylval');
+                    utmParams.set('utm_source', 'prylval');
+                    utmParams.set('utm_medium', 'affiliate');
+                    
+                    // Försök extrahera butiksnamn från domänen
+                    const storeName = hostname.split('.')[0];
+                    utmParams.set('utm_campaign', storeName);
+                    
+                    // Lägg till UTM-parametrar i affiliate-URL:en
+                    const finalUrl = `${affiliateUrl}&${utmParams.toString()}`;
+                    link.href = finalUrl;
+                    
+                    console.log(`Länk konverterad till affiliate: ${hostname}`);
+                }
+            } catch (error) {
+                console.error('Fel vid konvertering av affiliate-länk:', error);
+            }
+        }
+        
+        // Funktion för att hantera affiliate-länkar
+        function processAffiliateLinks() {
+            const links = document.querySelectorAll('a[href]');
+            
+            links.forEach(link => {
+                try {
+                    const href = link.href;
+                    
+                    // Kontrollera om det är en affiliate-domän
+                    if (AFFILIATE_CONFIG.affiliateDomains.some(domain => href.includes(domain))) {
+                        // Sätt rätt attribut för affiliate-länkar
+                        link.rel = 'sponsored noopener noreferrer';
+                        link.target = '_blank';
+                        
+                        // Lägg till UTM-parametrar om de inte redan finns
+                        if (!href.includes('utm_source=')) {
+                            const separator = href.includes('?') ? '&' : '?';
+                            const utmParams = new URLSearchParams();
+                            utmParams.set('epi', 'prylval');
+                            utmParams.set('utm_source', 'prylval');
+                            utmParams.set('utm_medium', 'affiliate');
+                            
+                            // Försök extrahera butiksnamn från URL:en
+                            const url = new URL(href);
+                            const hostname = url.hostname.toLowerCase();
+                            const storeName = hostname.split('.')[0];
+                            utmParams.set('utm_campaign', storeName);
+                            
+                            link.href = `${href}${separator}${utmParams.toString()}`;
+                        }
+                    } else {
+                        // Konvertera vanliga länkar till affiliate om det är godkända butiker
+                        convertToAffiliateLink(link);
+                    }
+                } catch (error) {
+                    console.error('Fel vid bearbetning av länk:', error);
+                }
+            });
+        }
+        
+        // Initiera affiliate-hantering när DOM är redo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Bearbeta affiliate-länkar
+            processAffiliateLinks();
+            
+            // Kontrollera cookie consent för Google Analytics
+            const cookieConsent = localStorage.getItem('prylval-cookie-consent');
+            if (cookieConsent) {
+                try {
+                    const consent = JSON.parse(cookieConsent);
+                    if (consent.analytics) {
+                        injectGA();
+                    }
+                } catch (error) {
+                    console.error('Fel vid läsning av cookie consent:', error);
+                }
+            }
+            
+            // Observera för nya länkar (för dynamiskt innehåll)
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'childList') {
+                        mutation.addedNodes.forEach(function(node) {
+                            if (node.nodeType === 1) { // Element node
+                                if (node.tagName === 'A') {
+                                    processAffiliateLinks();
+                                } else if (node.querySelectorAll) {
+                                    const links = node.querySelectorAll('a[href]');
+                                    if (links.length > 0) {
+                                        processAffiliateLinks();
+                                    }
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+            
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        });
+        
+        // Exponera funktioner globalt för CookieManager
+        window.injectGA = injectGA;
+        window.processAffiliateLinks = processAffiliateLinks;
+    </script>
+
+
+
+    <script>
 </script>
 </body>
 </html>

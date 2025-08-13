@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bästa Dammsugare 2025 - Prylval.se</title>
-    <meta name="description" content="Jämför årets bästa dammsugare. Vi testar prestanda, ljudnivå och funktioner för olika behov.">
+    <title>Bästa dammsugare 2025 - Prylval.se</title>
+    <meta name="description" content="Jämför årets bästa dammsugare. Vi testar sugkraft, batteritid och funktioner för olika behov och budgetar. Hitta din perfekta dammsugare.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Bästa Dammsugare 2025 - Prylval.se">
-    <meta property="og:description" content="Jämför årets bästa dammsugare. Vi testar prestanda, ljudnivå och funktioner.">
+    <meta property="og:title" content="Bästa dammsugare 2025 - Prylval.se">
+    <meta property="og:description" content="Jämför årets bästa dammsugare. Vi testar sugkraft, batteritid och funktioner.">
     <meta property="og:url" content="https://www.prylval.se/dammsugare.html">
     <meta property="og:type" content="website">
     
@@ -20,7 +20,7 @@
     {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        "name": "Bästa Dammsugare 2025",
+        "name": "Bästa dammsugare 2025",
         "url": "https://www.prylval.se/dammsugare.html",
         "description": "Jämförelse av årets bästa dammsugare",
         "publisher": {
@@ -42,8 +42,8 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fff;
+            color: #1e293b;
+            background-color: #f8fafc;
         }
         
         /* Skip to content */
@@ -71,7 +71,7 @@
         
         /* Header */
         header {
-            background: #fff;
+            background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
@@ -98,15 +98,6 @@
             content: '⚡';
             font-size: 1.2rem;
             margin-right: 0.5rem;
-            opacity: 0.7;
-            vertical-align: middle;
-        }
-        
-        .tagline {
-            display: none;
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 0.2rem;
         }
         
         .nav-toggle {
@@ -115,7 +106,7 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #333;
+            color: #1e293b;
         }
         
         nav ul {
@@ -126,7 +117,7 @@
         
         nav a {
             text-decoration: none;
-            color: #333;
+            color: #1e293b;
             font-weight: 500;
             transition: color 0.2s;
         }
@@ -136,131 +127,156 @@
             color: #475569;
         }
         
-        /* Breadcrumb - Modern design */
-        .breadcrumb {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            padding: 1.5rem 0;
-            margin-bottom: 2rem;
+        /* Breadcrumbs */
+        .breadcrumbs {
+            background: white;
+            padding: 1rem 0;
+            font-size: 0.9rem;
             border-bottom: 1px solid #e2e8f0;
         }
         
-        .breadcrumb .container {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .breadcrumb a {
-            color: #475569;
+        .breadcrumbs a {
+            color: #64748b;
             text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            color: #475569;
+        }
+        
+        .separator {
+            margin: 0 0.5rem;
+            color: #cbd5e1;
+        }
+        
+        .current {
+            color: #1e293b;
             font-weight: 500;
-            transition: color 0.2s ease;
         }
         
-        .breadcrumb a:hover {
-            color: #1e293b;
-            text-decoration: underline;
-        }
-        
-        .breadcrumb .separator {
-            color: #94a3b8;
-            margin: 0 0.25rem;
-        }
-        
-        .breadcrumb .current {
-            color: #64748b;
-            font-weight: 600;
-        }
-        
-        /* Main content */
-        main {
-            padding: 2rem 0;
-        }
-        
-        .page-header {
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
             text-align: center;
-            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
         }
         
-        .page-header h1 {
-            font-size: 2.5rem;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: #1e293b;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         
-        .page-header p {
+        .hero p {
             font-size: 1.2rem;
-            color: #64748b;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 2rem auto;
+            opacity: 0.9;
         }
         
-        /* Produktlista */
-        .products-section {
-            padding: 3rem 0;
-        }
-        
-        .products-grid {
+        /* Produktkort - modern design */
+        .picks-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin: 3rem 0;
         }
         
-        .product-card {
+        .pick-card {
             background: white;
             border-radius: 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid #f1f5f9;
-            text-decoration: none;
-            color: inherit;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
         }
         
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-            border-color: #e2e8f0;
+        .pick-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: #475569;
         }
         
-        .product-card img {
+        .pick-card picture {
             width: 100%;
             height: 200px;
+            display: block;
+        }
+        
+        .pick-card img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
         
-        .product-content {
+        .pick-content {
             padding: 1.5rem;
         }
         
-        .product-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #1e293b;
-            font-weight: 700;
-        }
-        
-        .product-description {
-            color: #64748b;
+        .pick-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 1rem;
-            line-height: 1.5;
         }
         
-        .product-features {
+        .pick-rank {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .pick-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pick-description {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .pick-features {
             list-style: none;
             margin-bottom: 1.5rem;
         }
         
-        .product-features li {
-            padding: 0.25rem 0;
-            color: #64748b;
+        .pick-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
             position: relative;
             padding-left: 1.5rem;
         }
         
-        .product-features li::before {
+        .pick-features li::before {
             content: "✓";
             position: absolute;
             left: 0;
@@ -268,82 +284,52 @@
             font-weight: bold;
         }
         
-        .product-link {
-            background: #475569;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            display: inline-block;
-            transition: background 0.2s;
-        }
-        
-        .product-link:hover {
-            background: #374151;
-        }
-        
-        /* Navigation actions */
-        .navigation-actions {
-            margin-top: 3rem;
+        .pick-footer {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.2s;
-            border: 2px solid #e2e8f0;
-            background: #f8fafc;
-            color: #475569;
-        }
-        
-        .btn:hover {
-            background: #f1f5f9;
-            border-color: #cbd5e1;
-            color: #1e293b;
-        }
-        
-        /* Footer */
-        footer {
-            background: #1e293b;
-            color: white;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            justify-content: space-between;
             align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
         }
         
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            justify-content: center;
+        .pick-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #059669;
         }
         
-        .footer-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover,
-        .footer-links a:focus {
+        .pick-btn {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
             color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
         }
         
-        /* Responsive */
+        .pick-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        /* Responsiv design */
         @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .picks-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
             .nav-toggle {
                 display: block;
             }
@@ -363,28 +349,6 @@
             nav ul.active {
                 display: flex;
             }
-            
-            .page-header h1 {
-                font-size: 2rem;
-            }
-            
-            .page-header p {
-                font-size: 1rem;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-            
-            .tagline {
-                display: block;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
         }
         
         /* Focus states */
@@ -393,105 +357,121 @@
             outline: 2px solid #475569;
             outline-offset: 2px;
         }
-        
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
     </style>
 </head>
 <body>
-    <a id="top"></a>
     <a href="#main-content" class="skip-link">Hoppa till innehåll</a>
     
     <header>
         <div class="container">
             <div class="header-content">
-                <div>
-                    <a href="index.html" class="logo">Prylval.se</a>
-                    <div class="tagline">Bästa prylarna – jämförelser, tester och topplistor</div>
-                </div>
+                <a href="/" class="logo">Prylval.se</a>
                 <button class="nav-toggle" aria-label="Öppna meny">☰</button>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Hem</a></li>
-                        <li><a href="index.html#senaste-tester">Senaste Tester</a></li>
-                        <li><a href="index.html#topplistan">Topplistan</a></li>
-                        <li><a href="kategorier.html">Kategorier</a></li>
-                        <li><a href="index.html#om-prylval">Om Prylval</a></li>
-                        <li><a href="index.html#kontakt">Kontakt</a></li>
+                        <li><a href="/">Hem</a></li>
+                        <li><a href="/#senaste-tester">Senaste Tester</a></li>
+                        <li><a href="/#topplistan">Topplistan</a></li>
+                        <li><a href="/#kategorier">Kategorier</a></li>
+                        <li><a href="/#om-prylval">Om Prylval</a></li>
+                        <li><a href="/#kontakt">Kontakt</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <div class="breadcrumb">
+    <div class="breadcrumbs">
         <div class="container">
-            <a href="index.html">Hem</a>
-            <span class="separator">/</span>
-            <a href="kategorier.html">Kategorier</a>
+            <a href="/">Hem</a>
             <span class="separator">/</span>
             <span class="current">Dammsugare</span>
         </div>
     </div>
 
     <main id="main-content">
-        <div class="container">
-            <div class="page-header">
-                <h1>Bästa Dammsugare 2025</h1>
-                <p>Jämför årets bästa dammsugare. Vi testar prestanda, ljudnivå och funktioner för olika behov.</p>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Bästa dammsugare 2025</h1>
+                    <p>Jämför årets bästa dammsugare. Vi testar sugkraft, batteritid och funktioner för olika behov och budgetar. Hitta din perfekta dammsugare.</p>
+                </div>
             </div>
+        </section>
 
-            <div class="products-section">
-                <div class="products-grid">
-                    <article class="product-card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Dyson+V15+Detect" alt="Dyson V15 Detect">
-                        <div class="product-content">
-                            <h3 class="product-title">Dyson V15 Detect</h3>
-                            <p class="product-description">Kabeltrådlös dammsugare med laser-teknik för synlig damm.</p>
-                            <ul class="product-features">
-                                <li>Laser-teknik</li>
-                                <li>60 min batteritid</li>
-                                <li>240 AW sugkraft</li>
-                            </ul>
-                            <a href="dyson-v15-detect.html" class="product-link">Läs mer</a>
+        <div class="container">
+            <div class="picks-grid">
+                <article id="toppval-1" class="pick-card">
+                    <picture>
+                        <source srcset="/media/products/dyson-v15-detect.avif" type="image/avif">
+                        <img src="/media/products/dyson-v15-detect.avif" alt="Dyson V15 Detect dammsugare" width="800" height="450" loading="lazy" decoding="async" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw">
+                    </picture>
+                    <div class="pick-content">
+                        <div class="pick-header">
+                            <div class="pick-rank">Toppval #1</div>
                         </div>
-                    </article>
-
-                    <article class="product-card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Miele+Triflex" alt="Miele Triflex">
-                        <div class="product-content">
-                            <h3 class="product-title">Miele Triflex</h3>
-                            <p class="product-description">Flexibel dammsugare med tre olika konfigurationer.</p>
-                            <ul class="product-features">
-                                <li>3 konfigurationer</li>
-                                <li>60 min batteritid</li>
-                                <li>Hepa-filter</li>
-                            </ul>
-                            <a href="miele-triflex.html" class="product-link">Läs mer</a>
+                        <h3 class="pick-title">Dyson V15 Detect</h3>
+                        <p class="pick-description">Kabeltrådlös dammsugare med laser-teknik för synlig damm. Perfekt för hem som vill ha den bästa rengöringen med minimal ansträngning.</p>
+                        <ul class="pick-features">
+                            <li>Laser-teknik för damm</li>
+                            <li>240 AW sugkraft</li>
+                            <li>60 min batteritid</li>
+                            <li>LCD-display</li>
+                        </ul>
+                        <div class="pick-footer">
+                            <div class="pick-price">Från 8 995 kr</div>
+                            <a href="dyson-v15-detect.html" class="pick-btn">Läs mer</a>
                         </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="product-card">
-                        <img src="https://via.placeholder.com/400x200.png?text=Bosch+Unlimited" alt="Bosch Unlimited">
-                        <div class="product-content">
-                            <h3 class="product-title">Bosch Unlimited</h3>
-                            <p class="product-description">Kraftfull dammsugare med lång batteritid och bra sugkraft.</p>
-                            <ul class="product-features">
-                                <li>120 min batteritid</li>
-                                <li>Kraftfull motor</li>
-                                <li>Lättviktig design</li>
-                            </ul>
-                            <a href="bosch-unlimited.html" class="product-link">Läs mer</a>
+                <article id="toppval-2" class="pick-card">
+                    <picture>
+                        <source srcset="/media/products/miele-triflex.avif" type="image/avif">
+                        <img src="/media/products/miele-triflex.avif" alt="Miele Triflex dammsugare" width="800" height="450" loading="lazy" decoding="async" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw">
+                    </picture>
+                    <div class="pick-content">
+                        <div class="pick-header">
+                            <div class="pick-rank">Toppval #2</div>
                         </div>
-                    </article>
-                </div>
+                        <h3 class="pick-title">Miele Triflex</h3>
+                        <p class="pick-description">Flexibel dammsugare med tre olika konfigurationer. Perfekt för hem som behöver anpassa dammsugaren efter olika rengöringsbehov.</p>
+                        <ul class="pick-features">
+                            <li>Tre konfigurationer</li>
+                            <li>60 min batteritid</li>
+                            <li>Kraftfull motor</li>
+                            <li>Enkel rengöring</li>
+                        </ul>
+                        <div class="pick-footer">
+                            <div class="pick-price">Från 6 995 kr</div>
+                            <a href="#" class="pick-btn">Läs mer</a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="navigation-actions">
-                    <a href="kategorier.html" class="btn">← Tillbaka till kategorier</a>
-                    <a href="index.html" class="btn">← Tillbaka till startsidan</a>
-                </div>
+                <article id="toppval-3" class="pick-card">
+                    <picture>
+                        <source srcset="/media/products/bosch-unlimited.avif" type="image/avif">
+                        <img src="/media/products/bosch-unlimited.avif" alt="Bosch Unlimited dammsugare" width="800" height="450" loading="lazy" decoding="async" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw">
+                    </picture>
+                    <div class="pick-content">
+                        <div class="pick-header">
+                            <div class="pick-rank">Toppval #3</div>
+                        </div>
+                        <h3 class="pick-title">Bosch Unlimited</h3>
+                        <p class="pick-description">Kabeltrådlös dammsugare med oändlig körtid. Perfekt för stora hem som behöver lång batteritid och kraftfull prestanda.</p>
+                        <ul class="pick-features">
+                            <li>Oändlig körtid</li>
+                            <li>Kraftfull motor</li>
+                            <li>Stor dammbehållare</li>
+                            <li>Smart styrning</li>
+                        </ul>
+                        <div class="pick-footer">
+                            <div class="pick-price">Från 4 995 kr</div>
+                            <a href="#" class="pick-btn">Läs mer</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </main>
@@ -500,12 +480,12 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="integritetspolicy.html">Integritetspolicy</a>
-                    <a href="anvandarvillkor.html">Användarvillkor</a>
-                    <a href="cookies.html">Cookies</a>
+                    <a href="/integritetspolicy.html">Integritetspolicy</a>
+                    <a href="/anvandarvillkor.html">Användarvillkor</a>
+                    <a href="/cookies.html">Cookies</a>
+                    <a href="/om-affiliatelankar.html">Info om annonslänkar</a>
                 </div>
                 <p>&copy; 2025 Prylval. Alla rättigheter förbehållna.</p>
-                <p>Senast uppdaterad: januari 2025</p>
             </div>
         </div>
     </footer>
