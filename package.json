@@ -4,16 +4,14 @@
   "type": "module",
   "scripts": {
     "fetch:affiliates": "node scripts/fetch-affiliates.mjs",
-    "build": "npm run fetch:affiliates && npm run postbuild",
     "postbuild": "cp data/affiliate-map.json public/",
-    "start": "serve -s public -l ${PORT:-3000}",
-    "dev": "npm run fetch:affiliates"
+    "dev": "npm run fetch:affiliates",
+    "start": "node scripts/fetch-affiliates.mjs"
   },
   "dependencies": {
-    "dotenv": "^16.3.1",
-    "serve": "^14.2.0"
+    "dotenv": "^16.3.1"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "20.x"
   }
 }
