@@ -1,0 +1,10 @@
+# Adtraction Product Feed URLs
+# Hämta från Adtraction UI: Tools → Product feeds → JSON
+# Kopiera denna fil till .env.local och uppdatera med dina riktiga URLs
+ATTRACTION_FEED_COMPUTERSALG=https://your-adtraction-account.com/feed/computersalg-se.json
+ATTRACTION_FEED_VALOSTORE=https://your-adtraction-account.com/feed/valostore-se.json
+
+# Prioritet för handlare (högre nummer = högre prioritet)
+# Valostore: 2, Computersalg: 1
+MERCHANT_PRIORITY_VALOSTORE=2
+MERCHANT_PRIORITY_COMPUTERSALG=1

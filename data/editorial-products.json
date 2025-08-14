@@ -1,0 +1,44 @@
+{
+  "_schema": 1,
+  "_description": "Redaktionella produktnycklar för Prylval - används för matchning mot Adtraction feeds",
+  "horlurar": [
+    "sony wh-1000xm5",
+    "bose quietcomfort ultra", 
+    "apple airpods max"
+  ],
+  "mesh": [
+    "tp-link deco xe75",
+    "asus zenwifi ax xt8",
+    "netgear orbi rbk752"
+  ],
+  "robotdammsugare": [
+    "roborock s8",
+    "irobot roomba j7+",
+    "dreame l10s ultra"
+  ],
+  "torktumlare": [
+    "bosch serie 6 wtr88t00sn",
+    "samsung dv90t5240ae",
+    "electrolux ew8h869b"
+  ],
+  "traningsklockor": [
+    "apple watch series 9",
+    "garmin forerunner 265",
+    "samsung galaxy watch6"
+  ],
+  "tvattmaskiner": [
+    "bosch serie 6 wan28209sn",
+    "lg f4wv710p2e",
+    "electrolux perfectcare 700 ew7f5247q7"
+  ],
+  "airfryers": [
+    "ninja foodi max",
+    "philips airfryer xxl",
+    "cosori air fryer"
+  ],
+  "dammsugare": [
+    "dyson v15 detect",
+    "miele triflex",
+    "bosch unlimited"
+  ]
+}
