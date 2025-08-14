@@ -5,7 +5,7 @@
   "scripts": {
     "fetch:affiliates": "node scripts/fetch-affiliates.mjs",
     "build": "npm run fetch:affiliates && npm run postbuild",
-    "postbuild": "mkdir -p public && cp data/affiliate-map.json public/",
+    "postbuild": "cp data/affiliate-map.json public/",
     "start": "serve -s public -l ${PORT:-3000}",
     "dev": "npm run fetch:affiliates"
   },
